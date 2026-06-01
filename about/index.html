@@ -6,23 +6,30 @@
   <title>About | KultureMonie Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:ital,wght@1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=20260601c">
   <style>
     .about-title { font-size: clamp(3rem, 8vw, 80px); line-height: .95; }
-    .about-title .white { color: var(--white); }
-    .about-title .gold { color: var(--gold); }
-    .about-sub { font-family: "Playfair Display", serif; font-size: clamp(1.2rem, 3vw, 28px); color: rgba(255,255,255,.88); font-style: italic; }
-    .quote-box { background: var(--red); border-left: 4px solid var(--gold); padding: 1.1rem; color: var(--white); }
+    .about-title .white { color: #fff; }
+    .about-title .gold { color: #FFCC00; }
+    .about-sub { font-family: "Plus Jakarta Sans", serif; font-size: clamp(1.2rem, 3vw, 28px); color: rgba(255,255,255,.92); font-style: italic; }
+    main .quote-box {
+      background: var(--red);
+      border-left: 4px solid var(--gold);
+      padding: 1.1rem;
+      color: #fff !important;
+    }
+    main .quote-box :is(p, strong, span) {
+      color: #fff !important;
+    }
     .quote-box p { margin-bottom: .7rem; }
-    .gradient-callout { font-family: "Bebas Neue", sans-serif; font-size: clamp(2rem, 5vw, 48px); line-height: 1; margin-bottom: .8rem; background: linear-gradient(90deg, var(--red), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .bold-stack div { font-family: "Bebas Neue", sans-serif; font-size: clamp(1.4rem, 3.2vw, 32px); line-height: 1.05; }
+    .gradient-callout { font-family: "Sora", sans-serif; font-size: clamp(2rem, 5vw, 48px); line-height: 1; margin-bottom: .8rem; background: linear-gradient(90deg, var(--red), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .bold-stack div { font-family: "Sora", sans-serif; font-size: clamp(1.4rem, 3.2vw, 32px); line-height: 1.05; }
     .bold-stack div:nth-child(odd) { color: var(--white); }
     .bold-stack div:nth-child(even) { color: var(--gold); }
     .cycle-wrap { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; justify-content: center; }
-    .cycle-step { background: var(--charcoal); color: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: .6rem .9rem; font-family: "Bebas Neue", sans-serif; font-size: 20px; }
-    .cycle-arrow { color: var(--gold); font-size: 1.2rem; animation: arrowPulse 1.2s ease-in-out infinite; }
-    .cycle-arrow:nth-of-type(2) { animation-delay: .1s; } .cycle-arrow:nth-of-type(4) { animation-delay: .2s; } .cycle-arrow:nth-of-type(6) { animation-delay: .3s; } .cycle-arrow:nth-of-type(8) { animation-delay: .4s; }
+    .cycle-step { background: var(--charcoal); color: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: .6rem .9rem; font-family: "Sora", sans-serif; font-size: 20px; }
+    .cycle-arrow { color: var(--gold); font-size: 1.2rem; }
     .panel ul { margin: .5rem 0 0; padding-left: 1rem; }
     .panel li { color: rgba(255,255,255,.72); margin-bottom: .25rem; font-size: .9rem; }
     .check-list { list-style: none; margin: .7rem 0; padding: 0; }
@@ -31,11 +38,12 @@
     .about-hero-bg {
       background:
         linear-gradient(120deg, rgba(0,0,0,.72), rgba(0,0,0,.58)),
-        url("assets/images/about-hero-visual.png") center/cover no-repeat;
+        url("/assets/images/about-hero-visual-v2.png") center/cover no-repeat;
       min-height: 72vh;
       display: flex;
       align-items: center;
     }
+    .about-hero-bg :is(h1,h2,h3,h4,p,span,strong) { color: #fff !important; }
     .agenda-visual {
       border: 1px solid var(--border);
       overflow: hidden;
@@ -47,24 +55,23 @@
       display: block;
       border-radius: 0;
     }
-    @keyframes arrowPulse { 0%,100%{ transform: translateX(0); opacity: .8; } 50%{ transform: translateX(5px); opacity: 1; } }
   </style>
 </head>
 <body>
   <header class="site-header nav">
     <div class="container nav-wrap">
-      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
       <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
       <nav id="primary-nav" class="nav-links nav__links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="impact.html">Impact</a>
-        <a href="resources.html">Resources</a>
-        <a href="marketplace.html">Marketplace</a>
-        <a href="gift-tokens.html">Gift & Tokens</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/impact">Impact</a>
+        <a href="/resources">Resources</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
       </nav>
       <div class="btn-row">
-        <a href="contact.html" class="btn btn-gold">Become a Culture Citizen</a>
+        <a href="/contact" class="btn btn-gold">Become a Culture Citizen</a>
         
       </div>
     </div>
@@ -81,12 +88,12 @@
     <section class="section section--dark">
       <div class="container grid-2">
         <div>
-          <h2 style="color:var(--white)">Vision Statement</h2>
-          <p style="color:rgba(255,255,255,.86)">Africa possesses one of the richest cultural ecosystems in the world — over 500+ tribes, thousands of languages, indigenous festivals, oral archives, symbols, performance traditions, and creative expressions spanning film, fashion, music, design, and storytelling.</p>
+          <h2 class="u-white">Vision Statement</h2>
+          <p class="u-text-86">Africa possesses one of the richest cultural ecosystems in the world — over 500+ tribes, thousands of languages, indigenous festivals, oral archives, symbols, performance traditions, and creative expressions spanning film, fashion, music, design, and storytelling.</p>
         </div>
         <aside class="quote-box">
-          <p>"KultureMonie Africa repositions culture as economic sovereignty — where African stories, symbols, languages, festivals, and digital creativity are owned, monetized, and reinvested by African citizens."</p>
-          <p>Culture becomes an asset class. IP becomes infrastructure. Identity becomes investable capital.</p>
+          <p style="color:#fff !important;">"KultureMonie Africa repositions culture as economic sovereignty — where African stories, symbols, languages, festivals, and digital creativity are owned, monetized, and reinvested by African citizens."</p>
+          <p style="color:#fff !important;">Culture becomes an asset class. IP becomes infrastructure. Identity becomes investable capital.</p>
         </aside>
       </div>
     </section>
@@ -97,7 +104,7 @@
           <div class="gradient-callout">FROM PASSIVE AUDIENCES → TO ACTIVE ECONOMIC PARTICIPANTS</div>
         </div>
         <div>
-          <p style="color:rgba(255,255,255,.82)">Through tokens, mobile platforms, cinema access, merchandise, streaming, festivals, and digital wallets, everyday engagement becomes structured circulation...</p>
+          <p class="u-text-82">Through tokens, mobile platforms, cinema access, merchandise, streaming, festivals, and digital wallets, everyday engagement becomes structured circulation...</p>
           <div class="bold-stack">
             <div>THIS IS NOT CHARITY.</div>
             <div>IT IS NOT DONATION.</div>
@@ -110,7 +117,7 @@
 
     <section class="section section--dark">
       <div class="container center">
-        <h2 style="color:var(--white)">Ecosystem Model Cycle</h2>
+        <h2 class="u-white">Ecosystem Model Cycle</h2>
         <div class="cycle-wrap">
           <span class="cycle-step">CREATION</span><span class="cycle-arrow">→</span>
           <span class="cycle-step">COMMERCE</span><span class="cycle-arrow">→</span>
@@ -123,7 +130,7 @@
 
     <section class="section section--dark">
       <div class="container">
-        <h2 style="color:var(--white)">KultureMonie Capital Engine</h2>
+        <h2 class="u-white">KultureMonie Capital Engine</h2>
         <div class="cards three">
           <article class="card panel"><p class="card__tag">Financial Orchestration</p><h3 class="card__title">KultureMonie Bank</h3><p class="card__body">KultureMonie Bank is the capital coordination architecture of the ecosystem. It does not operate as a traditional bank; it functions as a structured allocation engine...</p><ul><li>Revenue allocation percentages</li><li>Token conversion mechanisms</li><li>Festival capital pooling</li><li>Creative industry liquidity channels</li><li>Transparency and reporting dashboards</li></ul></article>
           <article class="card panel"><p class="card__tag">M8 Token Ecosystem</p><h3 class="card__title">Token Allocation Logic</h3><p class="card__body">The KultureMonie token ecosystem is built around structured participation...</p><ul><li>Telecom infrastructure</li><li>Creative funds</li><li>Education platforms</li><li>Green pledges</li><li>Health wallets</li><li>Cultural envoy networks</li><li>Marketplace reinvestment</li></ul></article>
@@ -136,11 +143,11 @@
       <div class="container">
         <div class="grid-2">
           <div class="agenda-visual">
-            <img src="assets/images/agenda-2063-map.png" alt="Stylized map of Africa representing Agenda 2063 alignment and continental integration">
+            <img src="/assets/images/agenda-2063-map.png" alt="Stylized map of Africa representing Agenda 2063 alignment and continental integration">
           </div>
           <div>
-            <h2 style="color:var(--white)">Agenda 2063 Alignment</h2>
-            <p style="color:rgba(255,255,255,.9)">KultureMonie Africa aligns with African Union Agenda 2063 in advancing:</p>
+            <h2 class="u-white">Agenda 2063 Alignment</h2>
+            <p class="u-text-90">KultureMonie Africa aligns with African Union Agenda 2063 in advancing:</p>
             <ul class="check-list">
               <li>Cultural renaissance</li>
               <li>Youth employment</li>
@@ -148,7 +155,7 @@
               <li>Economic diversification</li>
               <li>Creative and knowledge economies</li>
             </ul>
-            <p style="color:rgba(255,255,255,.9)">By embedding culture into digital finance, telecom, green transition, and health inclusion systems, KultureMonie operationalizes Agenda 2063 through marketplace mechanisms — not just policy language.</p>
+            <p class="u-text-90">By embedding culture into digital finance, telecom, green transition, and health inclusion systems, KultureMonie operationalizes Agenda 2063 through marketplace mechanisms — not just policy language.</p>
           </div>
         </div>
       </div>
@@ -158,40 +165,40 @@
   <footer class="site-footer">
   <div class="container footer-grid footer-grid-4">
     <div>
-      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
       <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href='#' aria-label='Instagram'><img src='assets/icons/instagram.svg' alt='Instagram' /></a>
-        <a href='#' aria-label='X'><img src='assets/icons/x.svg' alt='X' /></a>
-        <a href='#' aria-label='YouTube'><img src='assets/icons/youtube.svg' alt='YouTube' /></a>
-        <a href='#' aria-label='LinkedIn'><img src='assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        <a href='#' aria-label='Instagram'><img src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='#' aria-label='X'><img src='/assets/icons/x.svg' alt='X' /></a>
+        <a href='#' aria-label='YouTube'><img src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='#' aria-label='LinkedIn'><img src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
       </div>
     </div>
     <div>
       <h4>About</h4>
-      <a href="about.html">About KultureMonie</a>
-      <a href="impact.html">Impact</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="/about">About KultureMonie</a>
+      <a href="/impact">Impact</a>
+      <a href="/contact">Contact Us</a>
     </div>
     <div>
       <h4>Ecosystem</h4>
-      <a href="marketplace.html">Marketplace</a>
-      <a href="vendor.html">Vendor Network</a>
-      <a href="gift-tokens.html">Gift & Tokens</a>
+      <a href="/marketplace">Marketplace</a>
+      <a href="/vendor">Vendor Network</a>
+      <a href="/gift-tokens">Gift & Tokens</a>
     </div>
     <div>
       <h4>Resources</h4>
-      <a href="resources.html">Resources</a>
-      <a href="copyright.html">Copyright</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="/resources">Resources</a>
+      <a href="/copyright">Copyright</a>
+      <a href="/privacy">Privacy</a>
     </div>
   </div>
   <div class="container footer-bottom footer-legal">
     <p>© KultureMonie Africa</p>
-    <p><a href="copyright.html">Copyright</a> | <a href="privacy.html">Privacy</a> | <a href="contact.html">Contact</a></p>
+    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact">Contact</a></p>
   </div>
 </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js?v=20260601c"></script>
 </body>
 </html>

@@ -6,60 +6,128 @@
   <title>Vendor Registration | KultureMonie Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:ital,wght@1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=20260601c">
   <style>
     .vendor-hero h1 { font-size: clamp(2.6rem, 7vw, 74px); color: var(--white); }
-    .pill-row { display: flex; flex-wrap: wrap; gap: .6rem; margin: .8rem 0; }
-    .pill { border: 1px solid var(--gold); color: var(--gold); padding: .5rem .75rem; font-family: "Space Mono", monospace; font-size: .72rem; text-transform: uppercase; }
-    .muted { color: rgba(255,255,255,.82); }
-    .dual { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .box { background: var(--charcoal); border: 1px solid var(--border); padding: 1rem; }
-    .box h3 { color: var(--gold); }
-    .check-list { margin: .5rem 0 0; padding-left: 1rem; color: rgba(255,255,255,.85); }
-    .cat-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
-    .stepper { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .7rem; }
-    .step { background: var(--charcoal); border: 1px solid var(--border); padding: .8rem; color: rgba(255,255,255,.9); }
-    .step .n { color: var(--gold); font-family: "Space Mono", monospace; font-size: .78rem; margin-bottom: .35rem; }
-    .tiers li, .rev li { margin-bottom: .35rem; color: rgba(255,255,255,.85); }
-    .trans-panel { background: var(--charcoal); border: 1px solid var(--border); padding: 1rem; }
-    .vendor-form-wrap { background: var(--charcoal); border: 1px solid var(--border); padding: 1rem; }
-    .vendor-form-wrap label { color: var(--white); }
-    .vendor-form-wrap input, .vendor-form-wrap select, .vendor-form-wrap textarea {
-      background: #111;
-      color: var(--white);
-      border: 1px solid rgba(255,199,44,.5);
+    .vendor-hero .muted { color: rgba(255,255,255,.84); max-width: 920px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: .6rem; margin: .8rem 0 1rem; }
+    .pill {
+      border: 1px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      padding: .5rem .75rem;
+      font-family: "Plus Jakarta Sans", monospace;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
     }
-    details { border: 1px solid var(--border); padding: .7rem; margin: .8rem 0; }
-    summary { cursor: pointer; color: var(--gold); font-family: "Space Mono", monospace; text-transform: uppercase; font-size: .75rem; }
-    .pw-note { color: rgba(255,255,255,.72); font-size: .82rem; margin-top: -.45rem; margin-bottom: .75rem; }
+    .muted { color: #4d4d4d; }
+    .dual { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .box {
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,244,204,.95));
+      border: 1px solid rgba(218,41,28,.14);
+      border-radius: 18px;
+      padding: 1.15rem;
+      box-shadow: 0 16px 36px rgba(0,0,0,.06);
+    }
+    .box h3 { color: var(--red); margin-bottom: .65rem; }
+    .check-list { margin: .5rem 0 0; padding-left: 1rem; color: #333; }
+    .cat-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+    .cat-grid .card {
+      background: linear-gradient(180deg, #fff, #fff4cc);
+      border: 1px solid rgba(218,41,28,.12);
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.06);
+    }
+    .cat-grid .card:hover::after { border-color: rgba(218,41,28,.48); }
+    .cat-grid .card__tag { color: var(--red); }
+    .cat-grid .card__title { color: #1a1a1a !important; }
+    .cat-grid .card__body { color: #4d4d4d !important; }
+    .stepper { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .7rem; }
+    .step {
+      background: linear-gradient(180deg, #fff, #fff7df);
+      border: 1px solid rgba(218,41,28,.12);
+      border-top: 4px solid var(--gold);
+      border-radius: 16px;
+      padding: .95rem;
+      color: #333;
+      box-shadow: 0 10px 24px rgba(0,0,0,.05);
+    }
+    .step .n { color: var(--red); font-family: "Plus Jakarta Sans", monospace; font-size: .78rem; margin-bottom: .35rem; }
+    .tiers li, .rev li { margin-bottom: .35rem; color: #333; }
+    .trans-panel {
+      background: linear-gradient(180deg, #fff, #fff4cc);
+      border: 1px solid rgba(218,41,28,.14);
+      border-radius: 18px;
+      padding: 1.2rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,.05);
+    }
+    .vendor-form-wrap {
+      background: linear-gradient(180deg, #fff, #fff7df);
+      border: 1px solid rgba(218,41,28,.14);
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: 0 14px 34px rgba(0,0,0,.06);
+    }
+    .vendor-form-wrap label { color: #1a1a1a; font-weight: 600; }
+    .vendor-form-wrap input, .vendor-form-wrap select, .vendor-form-wrap textarea {
+      background: #fff;
+      color: #1a1a1a;
+      border: 1px solid rgba(0,0,0,.16);
+    }
+    .vendor-form-wrap input:focus, .vendor-form-wrap select:focus, .vendor-form-wrap textarea:focus { border-color: var(--red); }
+    details { border: 1px solid rgba(0,0,0,.12); background: rgba(255,255,255,.75); border-radius: 14px; padding: .8rem; margin: .8rem 0; }
+    summary { cursor: pointer; color: var(--red); font-family: "Plus Jakarta Sans", monospace; text-transform: uppercase; font-size: .75rem; }
+    .pw-note { color: #4d4d4d; font-size: .82rem; margin-top: -.45rem; margin-bottom: .75rem; }
+    .step-indicator { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1rem; }
+    .step-chip {
+      background: rgba(255,204,0,.22);
+      border: 1px solid rgba(218,41,28,.18);
+      color: #1a1a1a;
+      padding: .45rem .65rem;
+      border-radius: 999px;
+      font-family: "Plus Jakarta Sans", monospace;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .step-chip.active { background: var(--red); color: #fff; border-color: var(--red); }
+    .vendor-form-wrap .btn { min-width: 120px; }
+    #vendor-success {
+      background: linear-gradient(180deg, #fff, #fff4cc);
+      border: 1px solid rgba(218,41,28,.14);
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,.05);
+    }
     @media (max-width: 900px) { .dual, .cat-grid, .stepper { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <header class="site-header nav">
     <div class="container nav-wrap">
-      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
       <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
       <nav id="primary-nav" class="nav-links nav__links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="impact.html">Impact</a>
-        <a href="resources.html">Resources</a>
-        <a href="marketplace.html">Marketplace</a>
-        <a href="gift-tokens.html">Gift & Tokens</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/impact">Impact</a>
+        <a href="/resources">Resources</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
       </nav>
       <div class="btn-row">
-        <a href="contact.html" class="btn btn-gold">Become a Culture Citizen</a>
+        <a href="/contact" class="btn btn-gold">Become a Culture Citizen</a>
         
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section section--dark kente-bg vendor-hero">
+    <section class="section section--dark page-hero vendor-hero-bg vendor-hero">
       <div class="container">
-        <h1>WELCOME TO THE KULTUREMONIE VENDOR NETWORK</h1>
+        <h1>Welcome To The Kulturemonie Vendor Network</h1>
         <div class="pill-row">
           <span class="pill">BECOME A MARKETPLACE VENDOR</span>
           <span class="pill">LIST YOUR CREATIVE IP</span>
@@ -70,17 +138,17 @@
       </div>
     </section>
 
-    <section class="section section--charcoal">
+    <section class="section section--smoke">
       <div class="container dual">
         <div class="box">
-          <h3>WHY SELL ON KULTUREMONIE?</h3>
+          <h3>Why Sell On Kulturemonie?</h3>
           <p class="muted">KultureMonie integrates commerce, streaming, telecom, tokens, festivals, and creative finance into one interoperable system.</p>
           <ul class="check-list">
             <li>Continental audience</li><li>Token-integrated rewards</li><li>Streaming pipelines</li><li>Festival showcases</li><li>Creative funding pathways</li><li>Transparent revenue dashboards</li><li>Green/health brand positioning</li><li>KultureMonie Bank capital circulation</li>
           </ul>
         </div>
         <div class="box">
-          <h3>WHO CAN BECOME A VENDOR?</h3>
+          <h3>Who Can Become A Vendor?</h3>
           <ul class="check-list">
             <li>Filmmakers & Production Houses</li><li>Musicians & Record Labels</li><li>Fashion Designers & Merch Brands</li><li>Artists & Cultural Artisans</li><li>Writers & Script Developers</li><li>Festival Organizers & Event Curators</li><li>Tourism & Experience Providers</li><li>Tech & Telecom Integration Partners</li><li>Digital Content Creators & Influencers</li><li>Corporate Cultural Sponsors</li>
           </ul>
@@ -89,9 +157,9 @@
       </div>
     </section>
 
-    <section class="section section--dark">
+    <section class="section section--smoke">
       <div class="container">
-        <h2 style="color:var(--white)">What You Can List</h2>
+        <h2 class="u-white">What You Can List</h2>
         <div class="cat-grid">
           <article class="card"><p class="card__tag">Physical Products</p><h3 class="card__title">Goods</h3><p class="card__body">Merchandise / Cultural crafts / Fashion collections / Festival collectibles</p></article>
           <article class="card"><p class="card__tag">Digital Products</p><h3 class="card__title">Media & IP</h3><p class="card__body">Music and film / Podcasts and documentaries / Educational content / Digital art & tokenized collectibles</p></article>
@@ -101,9 +169,9 @@
       </div>
     </section>
 
-    <section class="section section--charcoal">
+    <section class="section section--smoke">
       <div class="container">
-        <h2 style="color:var(--white)">How It Works</h2>
+        <h2 class="u-white">How It Works</h2>
         <div class="stepper">
           <div class="step"><div class="n">1️⃣ APPLY</div>Submit vendor application with basic business and product details</div>
           <div class="step"><div class="n">2️⃣ GET VERIFIED</div>Team reviews for quality, authenticity, and IP compliance</div>
@@ -113,10 +181,10 @@
       </div>
     </section>
 
-    <section class="section section--dark">
+    <section class="section section--smoke">
       <div class="container dual">
         <div class="box rev">
-          <h3>REVENUE & TOKEN INTEGRATION</h3>
+          <h3>Revenue & Token Integration</h3>
           <ul>
             <li>KultureMonie Token (M8) rewards</li>
             <li>CultureBuddie loyalty</li>
@@ -127,7 +195,7 @@
           <p class="muted">This increases customer retention and ecosystem stickiness.</p>
         </div>
         <div class="box tiers">
-          <h3>VENDOR TIERS</h3>
+          <h3>Vendor Tiers</h3>
           <ul>
             <li><strong>Standard Vendor</strong> — marketplace listing + basic dashboard</li>
             <li><strong>Pro Creator</strong> — streaming integration + token rewards</li>
@@ -138,17 +206,17 @@
       </div>
     </section>
 
-    <section class="section section--charcoal">
+    <section class="section section--smoke">
       <div class="container trans-panel">
-        <h2 style="color:var(--white)">Built for Transparency</h2>
+        <h2 class="u-white">Built for Transparency</h2>
         <p class="muted">Every vendor has access to: Real-time sales tracking / Token participation reports / Allocation visibility / Impact contribution tracking / Festival performance metrics</p>
         <p class="muted"><strong>We believe culture capital requires discipline and clarity.</strong></p>
       </div>
     </section>
 
-    <section class="section section--dark">
+    <section class="section section--smoke">
       <div class="container container--narrow">
-        <h2 style="color:var(--white)">CREATE YOUR KULTUREMONIE VENDOR STORE</h2>
+        <h2 class="u-white">Create Your Kulturemonie Vendor Store</h2>
         <form id="vendor-form" class="vendor-form-wrap" novalidate>
           <div class="step-indicator">
             <span class="step-chip active">1 Account Details</span><span class="step-chip">2 Business Information</span><span class="step-chip">3 Documents</span><span class="step-chip">4 Payment Details</span><span class="step-chip">5 Terms</span>
@@ -213,40 +281,40 @@
   <footer class="site-footer">
   <div class="container footer-grid footer-grid-4">
     <div>
-      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
       <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href='#' aria-label='Instagram'><img src='assets/icons/instagram.svg' alt='Instagram' /></a>
-        <a href='#' aria-label='X'><img src='assets/icons/x.svg' alt='X' /></a>
-        <a href='#' aria-label='YouTube'><img src='assets/icons/youtube.svg' alt='YouTube' /></a>
-        <a href='#' aria-label='LinkedIn'><img src='assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        <a href='#' aria-label='Instagram'><img src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='#' aria-label='X'><img src='/assets/icons/x.svg' alt='X' /></a>
+        <a href='#' aria-label='YouTube'><img src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='#' aria-label='LinkedIn'><img src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
       </div>
     </div>
     <div>
       <h4>About</h4>
-      <a href="about.html">About KultureMonie</a>
-      <a href="impact.html">Impact</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="/about">About KultureMonie</a>
+      <a href="/impact">Impact</a>
+      <a href="/contact">Contact Us</a>
     </div>
     <div>
       <h4>Ecosystem</h4>
-      <a href="marketplace.html">Marketplace</a>
-      <a href="vendor.html">Vendor Network</a>
-      <a href="gift-tokens.html">Gift & Tokens</a>
+      <a href="/marketplace">Marketplace</a>
+      <a href="/vendor">Vendor Network</a>
+      <a href="/gift-tokens">Gift & Tokens</a>
     </div>
     <div>
       <h4>Resources</h4>
-      <a href="resources.html">Resources</a>
-      <a href="copyright.html">Copyright</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="/resources">Resources</a>
+      <a href="/copyright">Copyright</a>
+      <a href="/privacy">Privacy</a>
     </div>
   </div>
   <div class="container footer-bottom footer-legal">
     <p>© KultureMonie Africa</p>
-    <p><a href="copyright.html">Copyright</a> | <a href="privacy.html">Privacy</a> | <a href="contact.html">Contact</a></p>
+    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact">Contact</a></p>
   </div>
 </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js?v=20260601c"></script>
 </body>
 </html>
