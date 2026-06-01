@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource & Media Hub | KultureMonie Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:ital,wght@1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hub-hero h1 { font-size: clamp(3rem, 8vw, 80px); color: var(--white); }
+    .hub-sub { font-family: "Playfair Display", serif; font-style: italic; color: rgba(255,255,255,.86); font-size: clamp(1.15rem, 2.4vw, 26px); }
+    .icon-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .6rem; margin: 1rem 0; }
+    .icon-pill { border: 1px solid var(--border); background: var(--charcoal); color: var(--gold); text-align: center; padding: .7rem .4rem; font-family: "Space Mono", monospace; font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; }
+    .section-label { font-family: "Space Mono", monospace; color: var(--gold); font-size: .76rem; text-transform: uppercase; letter-spacing: .11em; margin-bottom: .5rem; }
+    .section-line { color: var(--white); font-family: "Playfair Display", serif; font-style: italic; font-size: clamp(1.05rem, 2.1vw, 22px); margin-bottom: 1rem; }
+    .resource-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .resource-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .resource-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .explore-btn { margin-top: .75rem; }
+    .download-icon { font-size: 1.25rem; color: var(--gold); margin-bottom: .5rem; display: inline-block; }
+    .audience-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin: 1rem 0; }
+    .audience-tags span { border: 1px solid rgba(255,255,255,.4); color: var(--white); padding: .5rem .72rem; font-family: "Space Mono", monospace; font-size: .72rem; text-transform: uppercase; }
+    @media (max-width: 980px) {
+      .icon-row, .resource-grid.three { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      .icon-row, .resource-grid, .resource-grid.three, .resource-grid.four { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header nav">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="primary-nav" class="nav-links nav__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="resources.html">Resources</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="gift-tokens.html">Gift & Tokens</a>
+      </nav>
+      <div class="btn-row">
+        <a href="contact.html" class="btn btn-gold">Become a Culture Citizen</a>
+        
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--dark kente-bg hub-hero">
+      <div class="container">
+        <h1>Resources</h1>
+        <p class="hub-sub">Where narrative meets data. Where culture meets evidence. Where participation meets accountability.</p>
+        <div class="icon-row">
+          <div class="icon-pill">Transparent ecosystem reporting</div>
+          <div class="icon-pill">Research-backed frameworks</div>
+          <div class="icon-pill">Educational tools</div>
+          <div class="icon-pill">Media storytelling</div>
+          <div class="icon-pill">Downloadable strategic resources</div>
+        </div>
+        <p style="color:rgba(255,255,255,.8)">Serves creators, investors, policymakers, development institutions, researchers.</p>
+      </div>
+    </section>
+
+    <section class="section section--charcoal">
+      <div class="container">
+        <p class="section-label">A. Media & Broadcasting</p>
+        <p class="section-line">Amplifying Narrative. Scaling Influence.</p>
+        <div class="resource-grid three">
+          <article class="card"><p class="card__tag">Broadcast</p><img src="assets/images/resources-kulturepulse-podcast.png" alt="KulturePulse TV Podcast studio interview broadcast scene"><h3 class="card__title">KulturePulse TV Podcast</h3><p class="card__body">Official discourse and storytelling channel. Interviews, panel discussions, policy dialogues, documentaries, creator features, culture diplomacy conversations. Spotlights: Creative entrepreneurs / Culture envoys / Youth innovators / Investors and partners / Festival highlights / Green and health integration stories.</p><a class="btn btn-outline explore-btn" href="contact.html">Explore</a></article>
+          <article class="card"><p class="card__tag">Distribution</p><img src="assets/images/resources-stream4kulture-archive.png" alt="Stream4Kulture digital archive and media library interface"><h3 class="card__title">Stream4Kulture | Music/Movie/News</h3><p class="card__body">Digital distribution hub for African music, films, podcasts, cultural news. Local ownership, fair monetization, creator-centered revenue models. Knowledge archive.</p><a class="btn btn-outline explore-btn" href="marketplace.html">Explore</a></article>
+          <article class="card"><p class="card__tag">Public Comms</p><img src="assets/images/resources-press-releases.png" alt="Press releases and media briefing environment"><h3 class="card__title">Press Releases</h3><p class="card__body">Strategic partnerships, marketplace milestones, capital mobilization, festival launches, token ecosystem expansion, policy collaborations.</p><a class="btn btn-outline explore-btn" href="contact.html">Explore</a></article>
+          <article class="card"><p class="card__tag">Visual Archive</p><img src="assets/images/resources-event-highlights.png" alt="Event highlights collage of African festival photography"><h3 class="card__title">Event Highlights</h3><p class="card__body">KultureRhyde Mobile Festival / KultureKulture Festival / Krea84Reel Festival / ArtBuddie Convergences / Culture Envoy Summits.</p><a class="btn btn-outline explore-btn" href="contact.html">Explore</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <p class="section-label">B. Research & Policy</p>
+        <p class="section-line">Building the Intellectual Backbone of Culture Capital</p>
+        <div class="resource-grid four">
+          <article class="card"><p class="card__tag">Whitepapers</p><img src="assets/images/resources-whitepapers-research.png" alt="Research desk with whitepapers and African market data visuals"><h3 class="card__title">Culture Capital Whitepapers</h3><p class="card__body">Culture as economic sovereignty / Tokenized participation economies / Festival economics / Telecom-integrated creative finance models / Heritage monetization frameworks.</p></article>
+          <article class="card"><p class="card__tag">Reports</p><img src="assets/images/resources-creative-economy-reports.png" alt="Creative economy reports with analytics dashboards"><h3 class="card__title">Creative Economy Reports</h3><p class="card__body">Marketplace growth metrics / Revenue circulation / Employment generation / Sector performance / Regional participation trends.</p></article>
+          <article class="card"><p class="card__tag">Framework</p><img src="assets/images/resources-token-economics-framework.png" alt="Token economics framework with allocation and flow diagrams"><h3 class="card__title">Token Economics Framework (M8)</h3><p class="card__body">Allocation logic / Revenue distribution / Incentive design / Liquidity safeguards / Integration across platforms.</p></article>
+          <article class="card"><p class="card__tag">Policy</p><img src="assets/images/resources-agenda-2063-papers.png" alt="Agenda 2063 policy papers with Africa map motifs"><h3 class="card__title">Agenda 2063 Alignment Papers</h3><p class="card__body">Policy briefs: culture drives youth employment, creative industries support economic diversification, heritage diplomacy strengthens integration.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--charcoal">
+      <div class="container">
+        <p class="section-label">C. Education & Capacity Building</p>
+        <div class="resource-grid four">
+          <article class="card"><p class="card__tag">Learning</p><img src="assets/images/resources-read3rybereel-learning.png" alt="Read3rybeReel classroom with cultural learning and digital storytelling"><h3 class="card__title">Read3rybeReel</h3><p class="card__body">Culture-based learning, indigenous language preservation, curriculum development, creative entrepreneurship. Equips: Cultural literacy / Digital storytelling skills / Creative business knowledge / Heritage innovation tools.</p></article>
+          <article class="card"><p class="card__tag">Programs</p><img src="assets/images/resources-aid4kulture-programs.png" alt="Aid4Kulture education and skills training workshop"><h3 class="card__title">Aid4Kulture Programs</h3><p class="card__body">SDG 4 aligned. Scholarships / Creative skill academies / Digital literacy training / Film and content production workshops.</p></article>
+          <article class="card"><p class="card__tag">Toolkit</p><img src="assets/images/resources-creator-toolkits.png" alt="Creator toolkits workspace with branding and monetization planning"><h3 class="card__title">Creator Toolkits</h3><p class="card__body">IP protection / Brand development / Monetization strategies / Token participation onboarding / Marketplace navigation / Festival application processes.</p></article>
+          <article class="card"><p class="card__tag">Investor</p><img src="assets/images/resources-investor-briefs.png" alt="Investor briefing documents with financial and impact metrics"><h3 class="card__title">Investor Briefs</h3><p class="card__body">Capital allocation / Risk mitigation / Return pathways / Sector growth projections / Impact measurement models.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <p class="section-label">Digital Assets & Downloads</p>
+        <div class="resource-grid four">
+          <article class="card"><span class="download-icon">⬇</span><p class="card__tag">Download</p><img src="assets/images/resources-marketplace-brochure.png" alt="Marketplace brochure mockup with ecosystem components"><h3 class="card__title">Marketplace Brochure</h3><p class="card__body">Platform components / Revenue channels / Participation pathways / Token systems / Ecosystem logic.</p><a class="btn btn-outline explore-btn" href="contact.html">Explore</a></article>
+          <article class="card"><span class="download-icon">⬇</span><p class="card__tag">Download</p><img src="assets/images/resources-investment-deck.png" alt="Investment deck pages with projections and governance visuals"><h3 class="card__title">Investment Deck</h3><p class="card__body">Market opportunity / Capital structure / Financial projections / Governance / Impact integration.</p><a class="btn btn-outline explore-btn" href="contact.html">Explore</a></article>
+          <article class="card"><span class="download-icon">⬇</span><p class="card__tag">Download</p><img src="assets/images/resources-festival-calendars.png" alt="Festival calendars and activation timeline planning board"><h3 class="card__title">Festival Calendars</h3><p class="card__body">Annual festival dates / Regional activations / Creator application timelines / Marketplace expansion milestones.</p><a class="btn btn-outline explore-btn" href="contact.html">Explore</a></article>
+          <article class="card"><span class="download-icon">⬇</span><p class="card__tag">Download</p><img src="assets/images/resources-ecosystem-infographics.png" alt="Ecosystem infographics showing culture capital flows and impact cycles"><h3 class="card__title">Ecosystem Infographics</h3><p class="card__body">Creation→Commerce→Tokenization→Finance cycle / Token allocation flows / Capital distribution / Festival economic impact.</p><a class="btn btn-outline explore-btn" href="contact.html">Explore</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--red">
+      <div class="container container--narrow center">
+        <h2 style="color:var(--white)">The Resource & Media Hub ensures that KultureMonie Africa is not only a marketplace — but a knowledge ecosystem.</h2>
+        <div class="audience-tags">
+          <span>Transparency for investors</span>
+          <span>Education for creators</span>
+          <span>Clarity for policymakers</span>
+          <span>Inspiration for citizens</span>
+        </div>
+        <p style="color:rgba(255,255,255,.92)">Because culture capital must be understood, not just celebrated.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-grid footer-grid-4">
+    <div>
+      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
+      <div class="footer-social" aria-label="Social links">
+        <a href='#' aria-label='Instagram'><img src='assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='#' aria-label='X'><img src='assets/icons/x.svg' alt='X' /></a>
+        <a href='#' aria-label='YouTube'><img src='assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='#' aria-label='LinkedIn'><img src='assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+      </div>
+    </div>
+    <div>
+      <h4>About</h4>
+      <a href="about.html">About KultureMonie</a>
+      <a href="impact.html">Impact</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div>
+      <h4>Ecosystem</h4>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="vendor.html">Vendor Network</a>
+      <a href="gift-tokens.html">Gift & Tokens</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="resources.html">Resources</a>
+      <a href="copyright.html">Copyright</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="container footer-bottom footer-legal">
+    <p>© KultureMonie Africa</p>
+    <p><a href="copyright.html">Copyright</a> | <a href="privacy.html">Privacy</a> | <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

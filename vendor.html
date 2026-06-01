@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Registration | KultureMonie Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:ital,wght@1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .vendor-hero h1 { font-size: clamp(2.6rem, 7vw, 74px); color: var(--white); }
+    .pill-row { display: flex; flex-wrap: wrap; gap: .6rem; margin: .8rem 0; }
+    .pill { border: 1px solid var(--gold); color: var(--gold); padding: .5rem .75rem; font-family: "Space Mono", monospace; font-size: .72rem; text-transform: uppercase; }
+    .muted { color: rgba(255,255,255,.82); }
+    .dual { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .box { background: var(--charcoal); border: 1px solid var(--border); padding: 1rem; }
+    .box h3 { color: var(--gold); }
+    .check-list { margin: .5rem 0 0; padding-left: 1rem; color: rgba(255,255,255,.85); }
+    .cat-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+    .stepper { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .7rem; }
+    .step { background: var(--charcoal); border: 1px solid var(--border); padding: .8rem; color: rgba(255,255,255,.9); }
+    .step .n { color: var(--gold); font-family: "Space Mono", monospace; font-size: .78rem; margin-bottom: .35rem; }
+    .tiers li, .rev li { margin-bottom: .35rem; color: rgba(255,255,255,.85); }
+    .trans-panel { background: var(--charcoal); border: 1px solid var(--border); padding: 1rem; }
+    .vendor-form-wrap { background: var(--charcoal); border: 1px solid var(--border); padding: 1rem; }
+    .vendor-form-wrap label { color: var(--white); }
+    .vendor-form-wrap input, .vendor-form-wrap select, .vendor-form-wrap textarea {
+      background: #111;
+      color: var(--white);
+      border: 1px solid rgba(255,199,44,.5);
+    }
+    details { border: 1px solid var(--border); padding: .7rem; margin: .8rem 0; }
+    summary { cursor: pointer; color: var(--gold); font-family: "Space Mono", monospace; text-transform: uppercase; font-size: .75rem; }
+    .pw-note { color: rgba(255,255,255,.72); font-size: .82rem; margin-top: -.45rem; margin-bottom: .75rem; }
+    @media (max-width: 900px) { .dual, .cat-grid, .stepper { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site-header nav">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="primary-nav" class="nav-links nav__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="resources.html">Resources</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="gift-tokens.html">Gift & Tokens</a>
+      </nav>
+      <div class="btn-row">
+        <a href="contact.html" class="btn btn-gold">Become a Culture Citizen</a>
+        
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--dark kente-bg vendor-hero">
+      <div class="container">
+        <h1>WELCOME TO THE KULTUREMONIE VENDOR NETWORK</h1>
+        <div class="pill-row">
+          <span class="pill">BECOME A MARKETPLACE VENDOR</span>
+          <span class="pill">LIST YOUR CREATIVE IP</span>
+          <span class="pill">APPLY AS A FESTIVAL PARTNER</span>
+        </div>
+        <p class="muted">KultureMonie Africa is building the largest culture-powered marketplace on the continent — and vendors are at the center of that ecosystem.</p>
+        <p class="muted">Whether you are a filmmaker, fashion brand, digital creator, festival organizer, artisan, writer, streaming content owner, or cultural entrepreneur — this is your gateway to structured revenue, continental visibility, and token-powered participation.</p>
+      </div>
+    </section>
+
+    <section class="section section--charcoal">
+      <div class="container dual">
+        <div class="box">
+          <h3>WHY SELL ON KULTUREMONIE?</h3>
+          <p class="muted">KultureMonie integrates commerce, streaming, telecom, tokens, festivals, and creative finance into one interoperable system.</p>
+          <ul class="check-list">
+            <li>Continental audience</li><li>Token-integrated rewards</li><li>Streaming pipelines</li><li>Festival showcases</li><li>Creative funding pathways</li><li>Transparent revenue dashboards</li><li>Green/health brand positioning</li><li>KultureMonie Bank capital circulation</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>WHO CAN BECOME A VENDOR?</h3>
+          <ul class="check-list">
+            <li>Filmmakers & Production Houses</li><li>Musicians & Record Labels</li><li>Fashion Designers & Merch Brands</li><li>Artists & Cultural Artisans</li><li>Writers & Script Developers</li><li>Festival Organizers & Event Curators</li><li>Tourism & Experience Providers</li><li>Tech & Telecom Integration Partners</li><li>Digital Content Creators & Influencers</li><li>Corporate Cultural Sponsors</li>
+          </ul>
+          <p class="muted"><strong>If you produce culture, experience, or creative IP — you belong here.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <h2 style="color:var(--white)">What You Can List</h2>
+        <div class="cat-grid">
+          <article class="card"><p class="card__tag">Physical Products</p><h3 class="card__title">Goods</h3><p class="card__body">Merchandise / Cultural crafts / Fashion collections / Festival collectibles</p></article>
+          <article class="card"><p class="card__tag">Digital Products</p><h3 class="card__title">Media & IP</h3><p class="card__body">Music and film / Podcasts and documentaries / Educational content / Digital art & tokenized collectibles</p></article>
+          <article class="card"><p class="card__tag">Experiences</p><h3 class="card__title">Access</h3><p class="card__body">Festival tickets / Cinema access / Travel and heritage tours / VIP cultural access passes</p></article>
+          <article class="card"><p class="card__tag">Intellectual Property</p><h3 class="card__title">Rights</h3><p class="card__body">Scripts / Film rights / Licensing agreements / Sponsored brand collaborations</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--charcoal">
+      <div class="container">
+        <h2 style="color:var(--white)">How It Works</h2>
+        <div class="stepper">
+          <div class="step"><div class="n">1️⃣ APPLY</div>Submit vendor application with basic business and product details</div>
+          <div class="step"><div class="n">2️⃣ GET VERIFIED</div>Team reviews for quality, authenticity, and IP compliance</div>
+          <div class="step"><div class="n">3️⃣ INTEGRATE</div>Connect listings to marketplace commerce / streaming / token rewards / festival showcases</div>
+          <div class="step"><div class="n">4️⃣ START EARNING</div>Track revenue in real time through vendor dashboard</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container dual">
+        <div class="box rev">
+          <h3>REVENUE & TOKEN INTEGRATION</h3>
+          <ul>
+            <li>KultureMonie Token (M8) rewards</li>
+            <li>CultureBuddie loyalty</li>
+            <li>Festival participation incentives</li>
+            <li>Creative funding eligibility</li>
+            <li>Green and health-linked impact channels</li>
+          </ul>
+          <p class="muted">This increases customer retention and ecosystem stickiness.</p>
+        </div>
+        <div class="box tiers">
+          <h3>VENDOR TIERS</h3>
+          <ul>
+            <li><strong>Standard Vendor</strong> — marketplace listing + basic dashboard</li>
+            <li><strong>Pro Creator</strong> — streaming integration + token rewards</li>
+            <li><strong>Festival Partner</strong> — showcase at KultureKulture and KultureRhyde festivals</li>
+            <li><strong>Enterprise Partner</strong> — finance, telecom, sponsorship, and capital pooling</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--charcoal">
+      <div class="container trans-panel">
+        <h2 style="color:var(--white)">Built for Transparency</h2>
+        <p class="muted">Every vendor has access to: Real-time sales tracking / Token participation reports / Allocation visibility / Impact contribution tracking / Festival performance metrics</p>
+        <p class="muted"><strong>We believe culture capital requires discipline and clarity.</strong></p>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container container--narrow">
+        <h2 style="color:var(--white)">CREATE YOUR KULTUREMONIE VENDOR STORE</h2>
+        <form id="vendor-form" class="vendor-form-wrap" novalidate>
+          <div class="step-indicator">
+            <span class="step-chip active">1 Account Details</span><span class="step-chip">2 Business Information</span><span class="step-chip">3 Documents</span><span class="step-chip">4 Payment Details</span><span class="step-chip">5 Terms</span>
+          </div>
+
+          <div class="vendor-step">
+            <label for="v-first">First and Last Name</label><input id="v-first" required>
+            <label for="v-phone">Phone Number</label><input id="v-phone" required>
+            <label for="v-email">Email</label><input id="v-email" type="email" required>
+            <label for="v-password">Password</label><input id="v-password" type="password" required>
+            <p class="pw-note">At least 8 characters containing an upper case, a lower case and a numeric character</p>
+            <label for="v-confirm">Confirm Password</label><input id="v-confirm" type="password" required>
+            <label for="v-store">Store Name</label><input id="v-store" required>
+            <label for="v-category">Artwork(s) Category</label>
+            <select id="v-category"><option>Painting</option><option>Drawing</option><option>Craftwork</option><option>Sculpture</option></select>
+            <label for="v-ref">Referred By</label><input id="v-ref">
+            <label><input type="checkbox" required> Terms & Conditions</label>
+            <div class="btn-row"><button class="btn btn-primary" type="button" data-next>Continue</button></div>
+          </div>
+
+          <div class="vendor-step hidden">
+            <details open><summary>ADD BUSINESS INFORMATION</summary>
+              <label for="b-name">Business/Company Name</label><input id="b-name">
+              <label for="b-address">Business Address</label><input id="b-address">
+              <label for="b-country">Country</label><input id="b-country">
+              <label for="b-state">State</label><input id="b-state">
+              <label for="b-city">City/Town</label><input id="b-city">
+              <label for="b-zip">Postal/Zip Code</label><input id="b-zip">
+              <label for="b-reg">Business/Company Registration Document</label><input id="b-reg" type="file">
+              <label for="b-tin">Certificate of Tax Identification Number (TIN)</label><input id="b-tin" type="file">
+              <label for="b-vat">VAT Information File</label><input id="b-vat" type="file">
+            </details>
+            <div class="btn-row"><button class="btn" type="button" data-prev>Back</button><button class="btn btn-primary" type="button" data-next>Continue</button></div>
+          </div>
+
+          <div class="vendor-step hidden">
+            <details open><summary>ADD PAYMENT DETAILS</summary>
+              <label for="p-bank">Bank Name</label><input id="p-bank">
+              <label for="p-acct-name">Account Name</label><input id="p-acct-name">
+              <label for="p-acct-no">Bank Account Number</label><input id="p-acct-no">
+              <label for="p-iban">IBAN</label><input id="p-iban">
+              <label for="p-swift">SWIFT Code</label><input id="p-swift">
+            </details>
+            <div class="btn-row"><button class="btn" type="button" data-prev>Back</button><button class="btn btn-primary" type="button" data-next>Continue</button></div>
+          </div>
+
+          <div class="vendor-step hidden">
+            <p class="muted">Review details and continue.</p>
+            <div class="btn-row"><button class="btn" type="button" data-prev>Back</button><button class="btn btn-primary" type="button" data-next>Continue</button></div>
+          </div>
+
+          <div class="vendor-step hidden">
+            <label><input type="checkbox" required> I confirm all vendor details are correct.</label>
+            <div class="btn-row"><button class="btn" type="button" data-prev>Back</button><button class="btn btn-gold" type="submit">Set Up Your Store Now!</button></div>
+          </div>
+        </form>
+        <div id="vendor-success" class="form-card hidden"><h3>Registration Successful</h3><p>Your vendor application has been received.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-grid footer-grid-4">
+    <div>
+      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
+      <div class="footer-social" aria-label="Social links">
+        <a href='#' aria-label='Instagram'><img src='assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='#' aria-label='X'><img src='assets/icons/x.svg' alt='X' /></a>
+        <a href='#' aria-label='YouTube'><img src='assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='#' aria-label='LinkedIn'><img src='assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+      </div>
+    </div>
+    <div>
+      <h4>About</h4>
+      <a href="about.html">About KultureMonie</a>
+      <a href="impact.html">Impact</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div>
+      <h4>Ecosystem</h4>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="vendor.html">Vendor Network</a>
+      <a href="gift-tokens.html">Gift & Tokens</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="resources.html">Resources</a>
+      <a href="copyright.html">Copyright</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="container footer-bottom footer-legal">
+    <p>© KultureMonie Africa</p>
+    <p><a href="copyright.html">Copyright</a> | <a href="privacy.html">Privacy</a> | <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

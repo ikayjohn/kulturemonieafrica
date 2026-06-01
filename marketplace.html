@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace | KultureMonie Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:ital,wght@1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .mk-hero h1 { font-size: clamp(3rem, 8vw, 78px); color: var(--white); margin-bottom: .8rem; }
+    .mk-tagline { font-family: "Bebas Neue", sans-serif; color: var(--gold); font-size: clamp(1.7rem, 4vw, 42px); margin: 1rem 0 .5rem; line-height: 1.02; }
+    .mk-hero p { color: rgba(255,255,255,.84); }
+    .cta-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; margin-top: .8rem; }
+    .cta-col { border: 1px solid var(--border); background: var(--charcoal); padding: .8rem; }
+    .cta-col h3 { font-size: 1.05rem; color: var(--gold); margin-bottom: .35rem; }
+    .cta-col p { font-size: .9rem; color: rgba(255,255,255,.78); margin: 0; }
+    .split-sub { font-family: "Playfair Display", serif; font-style: italic; color: var(--white); font-size: clamp(1rem, 2.2vw, 22px); margin: .25rem 0 .8rem; }
+    .red-panel { background: var(--red); padding: 1rem; color: var(--white); }
+    .red-panel ul { margin: .5rem 0 0; padding-left: 1rem; }
+    .red-panel li { margin-bottom: .35rem; }
+    .sec-label { font-family: "Space Mono", monospace; text-transform: uppercase; color: var(--gold); letter-spacing: .11em; font-size: .76rem; margin-bottom: .45rem; }
+    .sec-sub { font-family: "Playfair Display", serif; font-style: italic; color: var(--white); font-size: clamp(1rem, 2vw, 21px); margin-bottom: .8rem; }
+    .alt-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .mk-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .mk-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .mk-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .alt-list .card,
+    .mk-grid .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      gap: .6rem;
+      border-radius: 24px;
+      overflow: visible;
+    }
+    .alt-list .card img,
+    .mk-grid .card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      margin-bottom: .25rem;
+    }
+    .alt-list .card .btn,
+    .mk-grid .card .btn {
+      margin-top: auto;
+      align-self: flex-start;
+      padding: 14px 22px 15px;
+      line-height: 1.35;
+      font-size: .78rem;
+      letter-spacing: .075em;
+      white-space: normal;
+      overflow: visible;
+    }
+    .alt-list .card .card__tag {
+      margin-bottom: .2rem;
+      color: var(--gold);
+    }
+    .alt-list .card .card__title,
+    .mk-grid .card .card__title {
+      margin-bottom: .1rem;
+    }
+    .alt-list .card .card__body,
+    .mk-grid .card .card__body {
+      color: rgba(255,255,255,.84) !important;
+    }
+    .alt-list .card .card__title { color: var(--white); }
+    .alt-list .card {
+      border-color: rgba(255,199,44,.24);
+      box-shadow: 0 10px 28px rgba(0,0,0,.22);
+    }
+    .alt-list .card:hover { border-color: rgba(255,199,44,.45); transform: translateY(-3px); }
+    .close-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .55rem; margin: 1rem 0; }
+    .close-grid .cell { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28); color: var(--white); text-align: center; font-family: "Bebas Neue", sans-serif; font-size: 1.05rem; padding: .6rem .4rem; }
+    @media (max-width: 980px) { .cta-cols, .mk-grid.three { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 760px) {
+      .cta-cols, .mk-grid, .mk-grid.three, .mk-grid.four, .alt-list, .close-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header nav">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="primary-nav" class="nav-links nav__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="resources.html">Resources</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="gift-tokens.html">Gift & Tokens</a>
+      </nav>
+      <div class="btn-row">
+        <a href="contact.html" class="btn btn-gold">Become a Culture Citizen</a>
+        
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--dark kente-bg mk-hero">
+      <div class="container">
+        <h1>EXPLORE THE CULTURE CAPITAL MARKETPLACE</h1>
+        <div class="cta-cols">
+          <div class="cta-col"><h3>START TRADING CULTURE</h3><p>Buy, sell, stream, fund, and participate.</p></div>
+          <div class="cta-col"><h3>ACTIVATE YOUR CULTURE WALLET</h3><p>Join the token-powered participation economy.</p></div>
+          <div class="cta-col"><h3>TURN CREATIVITY INTO CAPITAL</h3><p>Launch, fund, or scale your creative venture.</p></div>
+        </div>
+        <p class="mk-tagline">Trade Culture. Stream Identity. Fund Creativity. Earn Participation.</p>
+        <p>The KultureMonie Marketplace integrates commerce, digital access, creative finance, and impact mechanisms into one interoperable ecosystem.</p>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container grid-2">
+        <div>
+          <h2 style="color:var(--white)">WELCOME TO THE KULTUREMONIE MARKETPLACE</h2>
+          <p class="split-sub">Primary Revenue & Participation Engine</p>
+          <p style="color:rgba(255,255,255,.84)">The KultureMonie Marketplace is the economic core of the ecosystem — where culture is traded, streamed, funded, tokenized, and reinvested.</p>
+          <p style="color:rgba(255,255,255,.84)">This is not just a digital shop. It is a structured circulation engine connecting creators, citizens, investors, telecom users, festival participants, and institutions into a unified culture capital system.</p>
+          <a class="btn btn-primary" href="marketplace.html">Shop Now</a>
+        </div>
+        <aside class="red-panel">
+          <h3 style="color:var(--gold)">Every transaction inside the Marketplace contributes to:</h3>
+          <ul>
+            <li>Creative industry growth</li>
+            <li>Structured capital formation</li>
+            <li>Social protection integration</li>
+            <li>Green transition funding</li>
+            <li>Continental economic sovereignty</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--charcoal">
+      <div class="container">
+        <p class="sec-label">A. Commerce</p>
+        <p class="sec-sub">Turning Culture into Structured Trade</p>
+        <div class="alt-list">
+          <article class="card">
+            <p class="card__tag">Commerce</p>
+            <img src="assets/images/marketplace-shop4kulture.png" alt="Shop4Kulture marketplace with African products">
+            <h3 class="card__title">Shop4Kulture</h3>
+            <p class="card__body">Flagship digital/physical marketplace. Enables: Cultural product sales / Film and music IP licensing / Art and fashion commerce / Festival merchandise trade / Digital and tokenized collectibles.</p>
+            <a class="btn btn-outline" href="marketplace.html">Shop the Marketplace</a>
+          </article>
+          <article class="card">
+            <p class="card__tag">Merchandising</p>
+            <img src="assets/images/marketplace-kulturebuddie.png" alt="KultureBuddie merchandise and branded culture products">
+            <h3 class="card__title">KultureBuddie</h3>
+            <p class="card__body">Transforms IP into: Apparel / Cultural collectibles / Festival co-branded products / Giftable creative assets.</p>
+            <a class="btn btn-outline" href="marketplace.html">Discover Merchandise</a>
+          </article>
+          <article class="card">
+            <p class="card__tag">Lifestyle</p>
+            <img src="assets/images/marketplace-kulture4life.png" alt="Kulture4Life Afrocentric lifestyle experiences">
+            <h3 class="card__title">Kulture4Life</h3>
+            <p class="card__body">Travel/tourism / Fashion/design / Cultural access passes / Experience-based entertainment.</p>
+            <a class="btn btn-outline" href="marketplace.html">Explore Lifestyle</a>
+          </article>
+          <article class="card">
+            <p class="card__tag">Gift Cards</p>
+            <img src="assets/images/marketplace-flixnflex.png" alt="FlixnFlex cinema and entertainment access scene">
+            <h3 class="card__title">FlixnFlex</h3>
+            <p class="card__body">Cinema and entertainment gift card ecosystem: Film screenings / Theatre performances / Cultural festivals / Streaming content. Ticket revenue → creative production funds.</p>
+            <a class="btn btn-outline" href="gift-tokens.html">Send Gift Card</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <p class="sec-label">B. Digital Streaming & Access</p>
+        <p class="sec-sub">Scaling Participation Through Connectivity</p>
+        <div class="mk-grid three">
+          <article class="card"><p class="card__tag">Streaming</p><img src="assets/images/marketplace-stream4kulture.png" alt="Stream4Kulture digital streaming platform visual"><h3 class="card__title">Stream4Kulture</h3><p class="card__body">African music, film, podcasts, cultural news. Local ownership / Fair monetization / Creator-first revenue distribution / Token-integrated rewards.</p><a class="btn btn-outline" href="marketplace.html">Start Streaming</a></article>
+          <article class="card"><p class="card__tag">MVNO</p><img src="assets/images/marketplace-kulturerhyde-mobile.png" alt="KultureRhyde Mobile telecom and culture participation"><h3 class="card__title">KultureRhyde Mobile</h3><p class="card__body">Culture-powered MVNO: Data bundles / Streaming access / Token rewards / Health wallet contributions / Green pledges.</p><a class="btn btn-outline" href="contact.html">Join KultureRhyde</a></article>
+          <article class="card"><p class="card__tag">Tech4Kulture</p><img src="assets/images/marketplace-kultureroodie-smarttab.png" alt="KultureRoodie SmartTab device and ecosystem apps"><h3 class="card__title">KultureRoodie SmartTab</h3><p class="card__body">1TB data, streaming, marketplace, token participation, creative funding eligibility.</p><a class="btn btn-outline" href="contact.html">Get SmartTab</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--charcoal">
+      <div class="container">
+        <p class="sec-label">C. Creative Funding</p>
+        <p class="sec-sub">Financing the Culture Economy</p>
+        <div class="mk-grid four">
+          <article class="card"><p class="card__tag">Project Finance</p><img src="assets/images/marketplace-kulturebanker-nextbigkulture.png" alt="KultureBanker NextBigKulture creative finance meeting"><h3 class="card__title">KultureBanker | NextBigKulture</h3><p class="card__body">Film production financing / music distribution funding / festival infrastructure / content scaling.</p><a class="btn btn-outline" href="contact.html">Fund a Project</a></article>
+          <article class="card"><p class="card__tag">Script Pipeline</p><img src="assets/images/marketplace-cashmykulture-scriptbanker.png" alt="CashMyKulture ScriptBanker script funding workspace"><h3 class="card__title">CashMyKulture | ScriptBanker</h3><p class="card__body">Script validation / Development grants / Community-backed token pledges / Production pipeline access.</p><a class="btn btn-outline" href="contact.html">Submit Your Script</a></article>
+          <article class="card"><p class="card__tag">Accelerator</p><img src="assets/images/marketplace-kulturepreneur.png" alt="Kulturepreneur accelerator mentoring creative founders"><h3 class="card__title">Kulturepreneur | Creative Economy Business</h3><p class="card__body">Mentorship / Incubation / Capital access / Marketplace integration / Business model refinement.</p><a class="btn btn-outline" href="contact.html">Apply for Funding</a></article>
+          <article class="card"><p class="card__tag">Creator Monetization</p><img src="assets/images/marketplace-crea80candy.png" alt="Crea80candy content creator monetization studio"><h3 class="card__title">Crea80candy | Content Creator</h3><p class="card__body">Brand partnership pipelines / Token issuance / Audience monetization tools / Revenue analytics dashboards.</p><a class="btn btn-outline" href="contact.html">Invest in Stories</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <p class="sec-label">D. Participation & Tokens</p>
+        <p class="sec-sub">The Value Circulation Layer</p>
+        <div class="mk-grid four">
+          <article class="card"><p class="card__tag">M8</p><img src="assets/images/marketplace-kulturemonie-token-m8.png" alt="KultureMonie Token M8 digital value circulation concept"><h3 class="card__title">KultureMonie Token (M8)</h3><p class="card__body">Tracks marketplace engagement / Rewards streaming and telecom / Enables green pledges / Health wallet contributions / Creative funding eligibility.</p><a class="btn btn-outline" href="gift-tokens.html">Activate Your Token</a></article>
+          <article class="card"><p class="card__tag">Loyalty</p><img src="assets/images/marketplace-culturebuddie-tokens.png" alt="CultureBuddie tokens for loyalty and festival rewards"><h3 class="card__title">CultureBuddie Tokens</h3><p class="card__body">Incentivize: Festival attendance / Merchandise purchases / Community engagement / Cultural ambassador participation.</p><a class="btn btn-outline" href="gift-tokens.html">Join as Citizen</a></article>
+          <article class="card"><p class="card__tag">Heritage</p><img src="assets/images/marketplace-kulture3rybe-token.png" alt="Kulture3rybe token for heritage participation"><h3 class="card__title">Kulture3rybe Token</h3><p class="card__body">Culture envoy programs / Language preservation / Heritage festivals / National identity campaigns.</p><a class="btn btn-outline" href="gift-tokens.html">Earn While You Engage</a></article>
+          <article class="card"><p class="card__tag">Youth Innovation</p><img src="assets/images/marketplace-crea82morrow-tokens.png" alt="Crea82morrow youth innovation token ecosystem"><h3 class="card__title">Crea82morrow Tokens</h3><p class="card__body">Startup acceleration / Talent competitions / Creator grants / Future-oriented creative initiatives.</p><a class="btn btn-outline" href="gift-tokens.html">Start Participation</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--charcoal">
+      <div class="container">
+        <p class="sec-label">E. Impact Integration</p>
+        <p class="sec-sub">Embedding Sustainability into Every Transaction</p>
+        <div class="mk-grid three">
+          <article class="card"><p class="card__tag">Climate</p><img src="assets/images/marketplace-kulture2green.png" alt="Kulture2Green climate pledge participation"><h3 class="card__title">Kulture2Green</h3><p class="card__body">Eco-pledge: Tree planting / Sustainable production / Climate awareness / Green transition funding.</p><a class="btn btn-outline" href="contact.html">Pledge for the Planet</a></article>
+          <article class="card"><p class="card__tag">Health</p><img src="assets/images/marketplace-kulture2care.png" alt="Kulture2Care health wallet integration scene"><h3 class="card__title">Kulture2Care</h3><p class="card__body">Universal Health Coverage integration via streaming / mobile usage / festival participation / token contributions.</p><a class="btn btn-outline" href="contact.html">Activate Health Wallet</a></article>
+          <article class="card"><p class="card__tag">Education</p><img src="assets/images/marketplace-aid4kulture.png" alt="Aid4Kulture education and youth skill development support"><h3 class="card__title">Aid4Kulture</h3><p class="card__body">Scholarships / Creative training academies / Digital literacy / Youth skill development aligned with SDG 4.</p><a class="btn btn-outline" href="contact.html">Support Education</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--red">
+      <div class="container container--narrow center">
+        <h2 style="color:var(--white)">THE KULTUREMONIE MARKETPLACE IS NOT A STOREFRONT — IT IS A STRUCTURED ECONOMIC ENGINE.</h2>
+        <div class="close-grid">
+          <div class="cell">Commerce</div>
+          <div class="cell">Connectivity</div>
+          <div class="cell">Capital</div>
+          <div class="cell">Citizenship</div>
+          <div class="cell">Climate</div>
+          <div class="cell">Care</div>
+        </div>
+        <p style="color:rgba(255,255,255,.92)">Every transaction builds infrastructure. Every stream strengthens the culture capital ecosystem. Every token drives reinvestment.</p>
+        <p style="color:rgba(255,255,255,.92)">This is culture operating as a marketplace economy at continental scale.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-grid footer-grid-4">
+    <div>
+      <a href="index.html" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
+      <div class="footer-social" aria-label="Social links">
+        <a href='#' aria-label='Instagram'><img src='assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='#' aria-label='X'><img src='assets/icons/x.svg' alt='X' /></a>
+        <a href='#' aria-label='YouTube'><img src='assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='#' aria-label='LinkedIn'><img src='assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+      </div>
+    </div>
+    <div>
+      <h4>About</h4>
+      <a href="about.html">About KultureMonie</a>
+      <a href="impact.html">Impact</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div>
+      <h4>Ecosystem</h4>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="vendor.html">Vendor Network</a>
+      <a href="gift-tokens.html">Gift & Tokens</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="resources.html">Resources</a>
+      <a href="copyright.html">Copyright</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="container footer-bottom footer-legal">
+    <p>© KultureMonie Africa</p>
+    <p><a href="copyright.html">Copyright</a> | <a href="privacy.html">Privacy</a> | <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
