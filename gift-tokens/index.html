@@ -6,13 +6,14 @@
   <title>Gift Cards & Tokens | KultureMonie Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/token-activation-hero-v2.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=20260601c">
+  <link rel="stylesheet" href="/css/style.css?v=20260608y">
   <style>
     .token-hero {
       background:
         linear-gradient(180deg, rgba(10,10,10,.68), rgba(10,10,10,.78)),
-        url('/assets/images/token-activation-hero-v2.png') center/cover no-repeat;
+        url('/assets/images/optimized/token-activation-hero-v2.webp') center/cover no-repeat;
     }
     .token-title { color: var(--white); font-size: clamp(2.3rem, 6vw, 64px); }
     .price-badge {
@@ -210,7 +211,7 @@
         <a href="/gift-tokens">Gift & Tokens</a>
       </nav>
       <div class="btn-row">
-        <a href="/contact" class="btn btn-gold">Become a Culture Citizen</a>
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
         
       </div>
     </div>
@@ -232,7 +233,7 @@
           <div class="benefit-item">❤️ Health wallet contributions</div>
           <div class="benefit-item">Education support channels</div>
         </div>
-        <a class="btn btn-gold big-activate" href="/contact">Activate Your Token</a>
+        <a class="btn btn-gold big-activate" href="/contact?intent=token-activation">Activate Your Token</a>
       </div>
     </section>
 
@@ -240,22 +241,24 @@
       <div class="container">
         <h2 class="u-white">Buy A Kulturemonie Gift Card</h2>
         <div class="gift-grid">
-          <div class="gift-form">
+          <form id="gift-card-form" class="gift-form" method="post" action="/gift-card-submit.php" novalidate>
+            <div class="form-status hidden" data-form-status></div>
             <label for="gift-email" class="u-white">Email</label>
-            <input id="gift-email" type="email" placeholder="recipient@email.com">
+            <input id="gift-email" name="gift_email" type="email" placeholder="recipient@email.com" required>
             <p>SEND A GIFT CARD VIA EMAIL. THE RECIPIENT CAN USE IT FOR PURCHASING ARTWORKS.</p>
             <label for="gift-expiry" class="u-white">Expiry Date</label>
-            <input id="gift-expiry" type="date">
+            <input id="gift-expiry" name="gift_expiry" type="date" required>
             <label class="u-white">Amount</label>
             <div class="amount-toggle">
-              <button class="active" type="button">₦10,000</button>
-              <button type="button">₦50,000</button>
+              <button class="active" type="button" data-gift-amount="10000">₦10,000</button>
+              <button type="button" data-gift-amount="50000">₦50,000</button>
             </div>
-            <button class="btn btn-primary" type="button">Buy Now</button>
-          </div>
+            <input type="hidden" name="gift_amount" value="10000" data-gift-amount-input>
+            <button class="btn btn-primary" type="submit">Buy Now</button>
+          </form>
           <div class="gift-card-preview">
             <div class="card-mock" role="img" aria-label="KultureMonie gift card mockup with black and gold styling, card number, expiry, and token access details">
-              <img src="/assets/images/gift-card-mockup-v2.png" alt="">
+              <img decoding="async" loading="lazy" src="/assets/images/optimized/gift-card-mockup-v2.webp" alt="">
               <div class="card-mock__content">
                 <div class="card-mock__top">
                   <div>
@@ -272,7 +275,7 @@
                   </div>
                   <div>
                     Wallet Value
-                    <strong>₦10,000</strong>
+                    <strong data-gift-preview-amount>₦10,000</strong>
                   </div>
                   <div class="card-mock__use">Use for marketplace artworks, tickets, and culture drops.</div>
                 </div>
@@ -291,17 +294,17 @@
       <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
       <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href='#' aria-label='Instagram'><img src='/assets/icons/instagram.svg' alt='Instagram' /></a>
-        <a href='#' aria-label='X'><img src='/assets/icons/x.svg' alt='X' /></a>
-        <a href='#' aria-label='YouTube'><img src='/assets/icons/youtube.svg' alt='YouTube' /></a>
-        <a href='#' aria-label='LinkedIn'><img src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+        <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
       </div>
     </div>
     <div>
       <h4>About</h4>
       <a href="/about">About KultureMonie</a>
       <a href="/impact">Impact</a>
-      <a href="/contact">Contact Us</a>
+      <a href="/contact?intent=culture-citizen">Contact Us</a>
     </div>
     <div>
       <h4>Ecosystem</h4>
@@ -318,10 +321,10 @@
   </div>
   <div class="container footer-bottom footer-legal">
     <p>© KultureMonie Africa</p>
-    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact">Contact</a></p>
+    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
   </div>
 </footer>
 
-  <script src="/js/main.js?v=20260601c"></script>
+  <script src="/js/main.js?v=20260608y"></script>
 </body>
 </html>

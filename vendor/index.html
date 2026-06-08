@@ -6,8 +6,9 @@
   <title>Vendor Registration | KultureMonie Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/vendor-hero-bg.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=20260601c">
+  <link rel="stylesheet" href="/css/style.css?v=20260608y">
   <style>
     .vendor-hero h1 { font-size: clamp(2.6rem, 7vw, 74px); color: var(--white); }
     .vendor-hero .muted { color: rgba(255,255,255,.84); max-width: 920px; }
@@ -118,7 +119,7 @@
         <a href="/gift-tokens">Gift & Tokens</a>
       </nav>
       <div class="btn-row">
-        <a href="/contact" class="btn btn-gold">Become a Culture Citizen</a>
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
         
       </div>
     </div>
@@ -217,34 +218,35 @@
     <section class="section section--smoke">
       <div class="container container--narrow">
         <h2 class="u-white">Create Your Kulturemonie Vendor Store</h2>
-        <form id="vendor-form" class="vendor-form-wrap" novalidate>
+        <div class="form-status hidden" data-form-status></div>
+        <form id="vendor-form" class="vendor-form-wrap" novalidate method="post" action="/vendor-submit.php">
           <div class="step-indicator">
             <span class="step-chip active">1 Account Details</span><span class="step-chip">2 Business Information</span><span class="step-chip">3 Documents</span><span class="step-chip">4 Payment Details</span><span class="step-chip">5 Terms</span>
           </div>
 
           <div class="vendor-step">
-            <label for="v-first">First and Last Name</label><input id="v-first" required>
-            <label for="v-phone">Phone Number</label><input id="v-phone" required>
-            <label for="v-email">Email</label><input id="v-email" type="email" required>
+            <label for="v-first">First and Last Name</label><input id="v-first" name="full_name" required>
+            <label for="v-phone">Phone Number</label><input id="v-phone" name="phone" required>
+            <label for="v-email">Email</label><input id="v-email" name="email" type="email" required>
             <label for="v-password">Password</label><input id="v-password" type="password" required>
             <p class="pw-note">At least 8 characters containing an upper case, a lower case and a numeric character</p>
             <label for="v-confirm">Confirm Password</label><input id="v-confirm" type="password" required>
-            <label for="v-store">Store Name</label><input id="v-store" required>
+            <label for="v-store">Store Name</label><input id="v-store" name="store_name" required>
             <label for="v-category">Artwork(s) Category</label>
-            <select id="v-category"><option>Painting</option><option>Drawing</option><option>Craftwork</option><option>Sculpture</option></select>
-            <label for="v-ref">Referred By</label><input id="v-ref">
+            <select id="v-category" name="category"><option>Painting</option><option>Drawing</option><option>Craftwork</option><option>Sculpture</option></select>
+            <label for="v-ref">Referred By</label><input id="v-ref" name="referred_by">
             <label><input type="checkbox" required> Terms & Conditions</label>
             <div class="btn-row"><button class="btn btn-primary" type="button" data-next>Continue</button></div>
           </div>
 
           <div class="vendor-step hidden">
             <details open><summary>ADD BUSINESS INFORMATION</summary>
-              <label for="b-name">Business/Company Name</label><input id="b-name">
-              <label for="b-address">Business Address</label><input id="b-address">
-              <label for="b-country">Country</label><input id="b-country">
-              <label for="b-state">State</label><input id="b-state">
-              <label for="b-city">City/Town</label><input id="b-city">
-              <label for="b-zip">Postal/Zip Code</label><input id="b-zip">
+              <label for="b-name">Business/Company Name</label><input id="b-name" name="business_name">
+              <label for="b-address">Business Address</label><input id="b-address" name="business_address">
+              <label for="b-country">Country</label><input id="b-country" name="country">
+              <label for="b-state">State</label><input id="b-state" name="state">
+              <label for="b-city">City/Town</label><input id="b-city" name="city">
+              <label for="b-zip">Postal/Zip Code</label><input id="b-zip" name="postal_code">
               <label for="b-reg">Business/Company Registration Document</label><input id="b-reg" type="file">
               <label for="b-tin">Certificate of Tax Identification Number (TIN)</label><input id="b-tin" type="file">
               <label for="b-vat">VAT Information File</label><input id="b-vat" type="file">
@@ -254,11 +256,11 @@
 
           <div class="vendor-step hidden">
             <details open><summary>ADD PAYMENT DETAILS</summary>
-              <label for="p-bank">Bank Name</label><input id="p-bank">
-              <label for="p-acct-name">Account Name</label><input id="p-acct-name">
-              <label for="p-acct-no">Bank Account Number</label><input id="p-acct-no">
-              <label for="p-iban">IBAN</label><input id="p-iban">
-              <label for="p-swift">SWIFT Code</label><input id="p-swift">
+              <label for="p-bank">Bank Name</label><input id="p-bank" name="bank_name">
+              <label for="p-acct-name">Account Name</label><input id="p-acct-name" name="account_name">
+              <label for="p-acct-no">Bank Account Number</label><input id="p-acct-no" name="account_number">
+              <label for="p-iban">IBAN</label><input id="p-iban" name="iban">
+              <label for="p-swift">SWIFT Code</label><input id="p-swift" name="swift_code">
             </details>
             <div class="btn-row"><button class="btn" type="button" data-prev>Back</button><button class="btn btn-primary" type="button" data-next>Continue</button></div>
           </div>
@@ -284,17 +286,17 @@
       <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
       <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href='#' aria-label='Instagram'><img src='/assets/icons/instagram.svg' alt='Instagram' /></a>
-        <a href='#' aria-label='X'><img src='/assets/icons/x.svg' alt='X' /></a>
-        <a href='#' aria-label='YouTube'><img src='/assets/icons/youtube.svg' alt='YouTube' /></a>
-        <a href='#' aria-label='LinkedIn'><img src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+        <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
       </div>
     </div>
     <div>
       <h4>About</h4>
       <a href="/about">About KultureMonie</a>
       <a href="/impact">Impact</a>
-      <a href="/contact">Contact Us</a>
+      <a href="/contact?intent=culture-citizen">Contact Us</a>
     </div>
     <div>
       <h4>Ecosystem</h4>
@@ -311,10 +313,10 @@
   </div>
   <div class="container footer-bottom footer-legal">
     <p>© KultureMonie Africa</p>
-    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact">Contact</a></p>
+    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
   </div>
 </footer>
 
-  <script src="/js/main.js?v=20260601c"></script>
+  <script src="/js/main.js?v=20260608y"></script>
 </body>
 </html>

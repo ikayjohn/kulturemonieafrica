@@ -6,8 +6,9 @@
   <title>KultureMonie Africa | Homepage</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/hero-bg.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=20260601c">
+  <link rel="stylesheet" href="/css/style.css?v=20260608y">
   <style>
     .hero-home {
       min-height: 100vh;
@@ -136,7 +137,43 @@
       border-color: #e50914;
       background: #e50914;
     }
-    .manifesto { background: var(--red); }
+    .manifesto {
+      background: var(--red);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .manifesto-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .manifesto-bg::before {
+      content: "";
+      position: absolute;
+      inset: -14%;
+      background-image: url("/assets/images/optimized/featured-kulturerhyde-mobile-festival.webp");
+      background-size: cover;
+      background-position: center;
+      filter: blur(4px) saturate(1.14);
+      opacity: 1;
+      transform: scale(1.08);
+    }
+    .manifesto::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(218,41,28,.5), rgba(218,41,28,.5)),
+        radial-gradient(circle at 20% 20%, rgba(255,204,0,.22), transparent 34%);
+    }
+    .manifesto .container {
+      position: relative;
+      z-index: 2;
+    }
     .manifesto-quote {
       font-family: "Sora", sans-serif;
       font-size: clamp(2rem, 6vw, 52px);
@@ -251,6 +288,69 @@
       .framework-heritage-img { height: 200px; }
     }
     @media (max-width: 640px) {
+      .hero-home,
+      .hero-slider,
+      .hero-slide {
+        min-height: calc(100svh - var(--nav-height, 70px));
+      }
+      .hero-slide {
+        align-items: flex-end;
+        padding: 0 0 5.25rem;
+        background-position: center top;
+      }
+      .hero-slide .container {
+        width: 90%;
+        margin-left: 16px;
+        margin-right: auto;
+      }
+      .hero-headline {
+        width: 100%;
+        max-width: 100%;
+      }
+      .hero-sub {
+        max-width: 30ch;
+        margin-top: .55rem;
+      }
+      .hero-cta-grid,
+      .hero-cta-item,
+      .hero-cta-item .btn {
+        width: 100%;
+        max-width: 100%;
+      }
+      .hero-cta-grid {
+        margin-top: .8rem;
+      }
+      .hero-cta-item small {
+        display: none;
+      }
+      .hero-arrows {
+        right: 16px;
+        bottom: 18px;
+      }
+      .hero-nav {
+        left: 16px;
+        bottom: 30px;
+      }
+      .scroll-indicator {
+        display: none;
+      }
+      .type-line {
+        white-space: normal;
+        width: auto;
+        border-right: 0;
+        animation: none;
+      }
+      .flow {
+        justify-content: flex-start;
+      }
+      .flow-arrow {
+        display: none;
+      }
+      .flow-step {
+        width: 100%;
+        border-radius: 8px;
+        text-align: center;
+      }
       .framework-grid { grid-template-columns: 1fr; }
       .framework-grid .card { min-height: 0; }
       .framework-grid .card img,
@@ -272,7 +372,7 @@
         <a href="/gift-tokens">Gift & Tokens</a>
       </nav>
       <div class="btn-row">
-        <a href="/contact" class="btn btn-gold">Become a Culture Citizen</a>
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
         
       </div>
     </div>
@@ -281,7 +381,7 @@
   <main>
     <section class="section hero-home kente-bg" data-hero-slider>
       <div class="hero-slider">
-        <div class="hero-slide" style="background-image:url('/assets/images/hero-bg.png')">
+        <div class="hero-slide" style="background-image:url('/assets/images/optimized/hero-bg.webp')">
           <div class="container">
             <h1 class="hero-headline red">Culture as Capital.</h1>
             <p class="hero-headline gold">Explore the Marketplace.</p>
@@ -291,23 +391,23 @@
             </div>
           </div>
         </div>
-        <div class="hero-slide" style="background-image:url('/assets/images/impact-kulture3rybeface-culture-envoys.png')">
+        <div class="hero-slide" style="background-image:url('/assets/images/optimized/impact-kulture3rybeface-culture-envoys.webp')">
           <div class="container">
             <h2 class="hero-headline red">Join the Movement.</h2>
             <p class="hero-headline gold">Become a Culture Citizen.</p>
             <p class="hero-sub">Join millions mobilizing culture for economic empowerment.</p>
             <div class="hero-cta-grid">
-              <div class="hero-cta-item"><a class="btn btn-gold" href="/contact">Become a Culture Citizen</a><small>Join millions mobilizing culture for economic empowerment</small></div>
+              <div class="hero-cta-item"><a class="btn btn-gold" href="/contact?intent=culture-citizen">Become a Culture Citizen</a><small>Join millions mobilizing culture for economic empowerment</small></div>
             </div>
           </div>
         </div>
-        <div class="hero-slide" style="background-image:url('/assets/images/marketplace-kulturebanker-nextbigkulture.png')">
+        <div class="hero-slide" style="background-image:url('/assets/images/optimized/marketplace-kulturebanker-nextbigkulture.webp')">
           <div class="container">
             <h2 class="hero-headline red">Finance Creative Futures.</h2>
             <p class="hero-headline gold">Invest in Creative Capital.</p>
             <p class="hero-sub">Access film finance, tokens, and festival infrastructure.</p>
             <div class="hero-cta-grid">
-              <div class="hero-cta-item"><a class="btn btn-outline" href="/contact">Invest in Creative Capital</a><small>Access film finance, tokens, festival infrastructure</small></div>
+              <div class="hero-cta-item"><a class="btn btn-outline" href="/contact?intent=creative-capital-investment">Invest in Creative Capital</a><small>Access film finance, tokens, festival infrastructure</small></div>
             </div>
           </div>
         </div>
@@ -325,6 +425,8 @@
     </section>
 
     <section class="section manifesto">
+      <div class="manifesto-bg" aria-hidden="true">
+      </div>
       <div class="container container--narrow center">
         <h2 class="manifesto-quote">We are not simply celebrating African culture.</h2>
         <div class="type-lines">
@@ -353,9 +455,9 @@
           <p class="u-text-82"><strong>This is culture reimagined as infrastructure.</strong></p>
         </div>
         <div class="stat-stack">
-          <div class="stat-box"><div class="num">$1T</div><div class="label">Target Creative Marketplace</div></div>
-          <div class="stat-box"><div class="num">10M+</div><div class="label">Culture Citizens Activated</div></div>
-          <div class="stat-box"><div class="num">500+</div><div class="label">Tribes & Identities Represented</div></div>
+          <div class="stat-box"><div class="num" data-count-to="1" data-count-prefix="$" data-count-suffix="T">0</div><div class="label">Target Creative Marketplace</div></div>
+          <div class="stat-box"><div class="num" data-count-to="10" data-count-suffix="M+">0</div><div class="label">Culture Citizens Activated</div></div>
+          <div class="stat-box"><div class="num" data-count-to="500" data-count-suffix="+">0</div><div class="label">Tribes & Identities Represented</div></div>
         </div>
       </div>
     </section>
@@ -364,10 +466,10 @@
       <div class="container">
         <p class="kicker">Featured Programs</p>
         <div class="cards two">
-          <article class="card reveal"><p class="card__tag">Festival</p><img src="/assets/images/featured-kulturerhyde-mobile-festival.png" loading="lazy" decoding="async" alt="KultureRhyde Mobile Festival crowd with stage lights and telecom activation"><h3 class="card__title">KultureRhyde Mobile Festival</h3><p class="card__body">Africa's largest Entertainment Citizen Carnival — activating 10 creative industries across 10 days, connecting 10 million entrepreneurs and influencers into a ₦250 billion culture capital marketplace.</p></article>
-          <article class="card reveal reveal-delay-1"><p class="card__tag">Diplomacy</p><img src="/assets/images/featured-kulture3rybeface.png" loading="lazy" decoding="async" alt="Kulture3rybeFace culture diplomacy gathering with heritage envoys"><h3 class="card__title">Kulture3rybeFace</h3><p class="card__body">A continental culture diplomacy movement building heritage envoys who translate creativity into sustainability, youth innovation, and economic empowerment aligned with Agenda 2063.</p></article>
-          <article class="card reveal reveal-delay-2"><p class="card__tag">Technology</p><img src="/assets/images/featured-kultureroodie-smarttab.png" loading="lazy" decoding="async" alt="KultureRoodie SmartTab users engaging with streaming and fintech tools"><h3 class="card__title">KultureRoodie SmartTab</h3><p class="card__body">Africa's biggest Tech4Kulture mobility platform — deploying culture-powered smart devices that convert data access into structured creative finance, health inclusion, and green participation.</p></article>
-          <article class="card reveal reveal-delay-3"><p class="card__tag">Content</p><img src="/assets/images/featured-krea84reel-festival.png" loading="lazy" decoding="async" alt="Krea84Reel Festival creators filming content with cameras and stage visuals"><h3 class="card__title">Krea84Reel Festival</h3><p class="card__body">The Culture Content Creators Carnival — mobilizing 10 million digital storytellers to transform narrative power into economic power.</p></article>
+          <article class="card reveal"><p class="card__tag">Festival</p><img src="/assets/images/optimized/featured-kulturerhyde-mobile-festival.webp" loading="lazy" decoding="async" alt="KultureRhyde Mobile Festival crowd with stage lights and telecom activation"><h3 class="card__title">KultureRhyde Mobile Festival</h3><p class="card__body">Africa's largest Entertainment Citizen Carnival — activating 10 creative industries across 10 days, connecting 10 million entrepreneurs and influencers into a ₦250 billion culture capital marketplace.</p></article>
+          <article class="card reveal reveal-delay-1"><p class="card__tag">Diplomacy</p><img src="/assets/images/optimized/featured-kulture3rybeface.webp" loading="lazy" decoding="async" alt="Kulture3rybeFace culture diplomacy gathering with heritage envoys"><h3 class="card__title">Kulture3rybeFace</h3><p class="card__body">A continental culture diplomacy movement building heritage envoys who translate creativity into sustainability, youth innovation, and economic empowerment aligned with Agenda 2063.</p></article>
+          <article class="card reveal reveal-delay-2"><p class="card__tag">Technology</p><img src="/assets/images/optimized/featured-kultureroodie-smarttab.webp" loading="lazy" decoding="async" alt="KultureRoodie SmartTab users engaging with streaming and fintech tools"><h3 class="card__title">KultureRoodie SmartTab</h3><p class="card__body">Africa's biggest Tech4Kulture mobility platform — deploying culture-powered smart devices that convert data access into structured creative finance, health inclusion, and green participation.</p></article>
+          <article class="card reveal reveal-delay-3"><p class="card__tag">Content</p><img src="/assets/images/optimized/featured-krea84reel-festival.webp" loading="lazy" decoding="async" alt="Krea84Reel Festival creators filming content with cameras and stage visuals"><h3 class="card__title">Krea84Reel Festival</h3><p class="card__body">The Culture Content Creators Carnival — mobilizing 10 million digital storytellers to transform narrative power into economic power.</p></article>
         </div>
       </div>
     </section>
@@ -391,11 +493,11 @@
       <div class="container">
         <h2 class="u-gold">Culture Capital Framework</h2>
         <div class="framework-grid">
-          <article class="card"><p class="card__tag">Pillar 1</p><img src="/assets/images/framework-creative-economy.png" loading="lazy" decoding="async" alt="Creative economy ecosystem with film, music, fashion, and digital creators"><h3 class="card__title">Creative Economy</h3><p class="card__body">Film, music, fashion, gaming, digital storytelling, festivals, merchandise production.</p></article>
-          <article class="card"><p class="card__tag">Pillar 2</p><img src="/assets/images/framework-green-economy.png" loading="lazy" decoding="async" alt="Green economy participation with community climate action and eco incentives"><h3 class="card__title">Green Economy</h3><p class="card__body">Kulture2Green, climate-linked participation models, eco-incentives.</p></article>
-          <article class="card"><p class="card__tag">Pillar 3</p><img src="/assets/images/framework-health-economy.png" loading="lazy" decoding="async" alt="Health economy integration with digital health wallets and community care"><h3 class="card__title">Health Economy</h3><p class="card__body">Kulture2care, health wallets, streaming + marketplace contributions.</p></article>
-          <article class="card"><p class="card__tag">Pillar 4</p><img src="/assets/images/framework-digital-economy.png" loading="lazy" decoding="async" alt="Digital economy scene with mobile connectivity, smart devices, and token tools"><h3 class="card__title">Digital Economy</h3><p class="card__body">KultureRhyde Mobile, KultureRoodie SmartTab, streaming, token systems.</p></article>
-          <article class="card"><p class="card__tag">Pillar 5</p><img class="framework-heritage-img" src="/assets/images/framework-heritage-diplomacy.png" loading="lazy" decoding="async" alt="Heritage diplomacy gathering with culture envoys and language preservation activities"><h3 class="card__title">Heritage Diplomacy</h3><p class="card__body">Kulture3rybeFace, culture envoy networks, language preservation.</p></article>
+          <article class="card"><p class="card__tag">Pillar 1</p><img src="/assets/images/optimized/framework-creative-economy.webp" loading="lazy" decoding="async" alt="Creative economy ecosystem with film, music, fashion, and digital creators"><h3 class="card__title">Creative Economy</h3><p class="card__body">Film, music, fashion, gaming, digital storytelling, festivals, merchandise production.</p></article>
+          <article class="card"><p class="card__tag">Pillar 2</p><img src="/assets/images/optimized/framework-green-economy.webp" loading="lazy" decoding="async" alt="Green economy participation with community climate action and eco incentives"><h3 class="card__title">Green Economy</h3><p class="card__body">Kulture2Green, climate-linked participation models, eco-incentives.</p></article>
+          <article class="card"><p class="card__tag">Pillar 3</p><img src="/assets/images/optimized/framework-health-economy.webp" loading="lazy" decoding="async" alt="Health economy integration with digital health wallets and community care"><h3 class="card__title">Health Economy</h3><p class="card__body">Kulture2care, health wallets, streaming + marketplace contributions.</p></article>
+          <article class="card"><p class="card__tag">Pillar 4</p><img src="/assets/images/optimized/framework-digital-economy.webp" loading="lazy" decoding="async" alt="Digital economy scene with mobile connectivity, smart devices, and token tools"><h3 class="card__title">Digital Economy</h3><p class="card__body">KultureRhyde Mobile, KultureRoodie SmartTab, streaming, token systems.</p></article>
+          <article class="card"><p class="card__tag">Pillar 5</p><img class="framework-heritage-img" src="/assets/images/optimized/framework-heritage-diplomacy.webp" loading="lazy" decoding="async" alt="Heritage diplomacy gathering with culture envoys and language preservation activities"><h3 class="card__title">Heritage Diplomacy</h3><p class="card__body">Kulture3rybeFace, culture envoy networks, language preservation.</p></article>
         </div>
       </div>
     </section>
@@ -404,7 +506,7 @@
       <div class="container container--narrow center">
         <p class="banner-text">KultureMonie Africa is building the world's first Culture Capital Infrastructure — where every stream, ticket, token, and story strengthens Africa's economic sovereignty.</p>
         <div class="btn-row center cta-actions">
-          <a class="btn btn-gold" href="/contact">Join the Movement</a>
+          <a class="btn btn-gold" href="/contact?intent=culture-citizen">Join the Movement</a>
           <a class="btn btn-outline" class="u-outline-white" href="/marketplace">Explore Marketplace</a>
         </div>
       </div>
@@ -417,17 +519,17 @@
       <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
       <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href='#' aria-label='Instagram'><img src='/assets/icons/instagram.svg' alt='Instagram' /></a>
-        <a href='#' aria-label='X'><img src='/assets/icons/x.svg' alt='X' /></a>
-        <a href='#' aria-label='YouTube'><img src='/assets/icons/youtube.svg' alt='YouTube' /></a>
-        <a href='#' aria-label='LinkedIn'><img src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+        <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
       </div>
     </div>
     <div>
       <h4>About</h4>
       <a href="/about">About KultureMonie</a>
       <a href="/impact">Impact</a>
-      <a href="/contact">Contact Us</a>
+      <a href="/contact?intent=culture-citizen">Contact Us</a>
     </div>
     <div>
       <h4>Ecosystem</h4>
@@ -444,10 +546,10 @@
   </div>
   <div class="container footer-bottom footer-legal">
     <p>© KultureMonie Africa</p>
-    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact">Contact</a></p>
+    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
   </div>
 </footer>
 
-  <script src="/js/main.js?v=20260601c"></script>
+  <script src="/js/main.js?v=20260608y"></script>
 </body>
 </html>

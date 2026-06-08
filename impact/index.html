@@ -6,8 +6,9 @@
   <title>Impact Action Ecosystem | KultureMonie Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/impact-hero-bg.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=20260601c">
+  <link rel="stylesheet" href="/css/style.css?v=20260608y">
   <style>
     .impact-hero h1 { font-size: clamp(3rem, 8vw, 80px); color: var(--white); }
     .impact-hero p { color: rgba(255,255,255,.85); }
@@ -153,6 +154,91 @@
     @media (max-width: 640px) {
       .impact-final-grid { grid-template-columns: 1fr; }
     }
+    .citizen-grid .card,
+    .impact-grid .card,
+    .fest-grid .card {
+      background: #000 !important;
+      color: #fff !important;
+      padding: 0 !important;
+      min-height: 0;
+    }
+    .citizen-grid .card::before,
+    .impact-grid .card::before,
+    .fest-grid .card::before {
+      display: none !important;
+    }
+    .citizen-grid .card img,
+    .impact-grid .card img,
+    .fest-grid .card img {
+      position: relative !important;
+      inset: auto !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      aspect-ratio: 16 / 10 !important;
+      object-fit: cover !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      margin: 0 !important;
+    }
+    .citizen-grid .card > :not(img):not(.card-overlay):not(.card-content),
+    .impact-grid .card > :not(img):not(.card-overlay):not(.card-content),
+    .fest-grid .card > :not(img):not(.card-overlay):not(.card-content) {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+    .citizen-grid .card .card__tag,
+    .impact-grid .card .card__tag,
+    .fest-grid .card .card__tag {
+      color: #ff6a70 !important;
+      margin-top: 1rem !important;
+    }
+    .citizen-grid .card :is(h1,h2,h3,h4,p,li,small,span,strong,label),
+    .impact-grid .card :is(h1,h2,h3,h4,p,li,small,span,strong,label),
+    .fest-grid .card :is(h1,h2,h3,h4,p,li,small,span,strong,label),
+    .citizen-grid .card .card__title,
+    .impact-grid .card .card__title,
+    .fest-grid .card .card__title,
+    .citizen-grid .card .card__body,
+    .impact-grid .card .card__body,
+    .fest-grid .card .card__body,
+    .citizen-grid .card .citizen-copy {
+      color: #fff !important;
+    }
+    .citizen-grid .card > :last-child,
+    .impact-grid .card > :last-child,
+    .fest-grid .card > :last-child {
+      margin-bottom: 1rem !important;
+    }
+    main .citizen-grid article.card.media-overlay .card-content *,
+    main .impact-grid article.card.media-overlay .card-content *,
+    main .fest-grid article.card.media-overlay .card-content *,
+    main .citizen-grid article.card.media-overlay .card-content .card__title,
+    main .impact-grid article.card.media-overlay .card-content .card__title,
+    main .fest-grid article.card.media-overlay .card-content .card__title,
+    main .citizen-grid article.card.media-overlay .card-content .card__body,
+    main .impact-grid article.card.media-overlay .card-content .card__body,
+    main .fest-grid article.card.media-overlay .card-content .card__body,
+    main .citizen-grid article.card.media-overlay .card-content .citizen-copy,
+    main .citizen-grid article.card > .card__title,
+    main .impact-grid article.card > .card__title,
+    main .fest-grid article.card > .card__title,
+    main .citizen-grid article.card > .card__body,
+    main .impact-grid article.card > .card__body,
+    main .fest-grid article.card > .card__body,
+    main .citizen-grid article.card > .citizen-copy {
+      color: #fff !important;
+    }
+    main .citizen-grid article.card.media-overlay .card-content .card__tag,
+    main .impact-grid article.card.media-overlay .card-content .card__tag,
+    main .fest-grid article.card.media-overlay .card-content .card__tag,
+    main .citizen-grid article.card > .card__tag,
+    main .impact-grid article.card > .card__tag,
+    main .fest-grid article.card > .card__tag {
+      color: #ff6a70 !important;
+    }
   </style>
 </head>
 <body>
@@ -169,7 +255,7 @@
         <a href="/gift-tokens">Gift & Tokens</a>
       </nav>
       <div class="btn-row">
-        <a href="/contact" class="btn btn-gold">Become a Culture Citizen</a>
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
         
       </div>
     </div>
@@ -194,11 +280,11 @@
             <p>Transformation begins with people. KultureMonie Africa activates citizens not as spectators, but as culture capital stakeholders through identity, narrative, festivals, and digital participation systems.</p>
           </div>
           <div class="citizen-grid">
-            <article class="card citizen-card"><p class="card__tag">Culture Envoys</p><img src="/assets/images/impact-kulture3rybeface-culture-envoys.png" alt="Kulture3rybeFace culture envoys in traditional dress at a community gathering"><h3 class="card__title">Kulture3rybeFace</h3><p class="citizen-copy">A continental culture diplomacy movement building heritage ambassadors who translate identity into economic opportunity. Culture Envoys mobilize communities, preserve languages, amplify sustainability narratives, and align storytelling with African Union Agenda 2063.</p></article>
-            <article class="card citizen-card"><p class="card__tag">Festival</p><img src="/assets/images/impact-kulture3rybeface-nigeria-festival.png" alt="Kulture3rybeFace Nigeria Festival crowd celebrating culture"><h3 class="card__title">Kulture3rybeFace Nigeria Festival</h3><p class="citizen-copy">A 100-day national activation platform uniting 500+ tribes and languages into a structured heritage marketplace that converts cultural diversity into measurable economic participation.</p></article>
-            <article class="card citizen-card"><p class="card__tag">Creators</p><img src="/assets/images/impact-krea84reel-festival.png" alt="Krea84Reel Festival content creators filming digital stories"><h3 class="card__title">Krea84Reel Festival</h3><p class="citizen-copy">A Culture Content Creators Carnival connecting millions of digital storytellers across identities and integrating them into token systems, funding pools, and policy storytelling.</p></article>
-            <article class="card citizen-card"><p class="card__tag">Reality Platform</p><img src="/assets/images/impact-run4kulture-reality-show.png" alt="Run4Kulture reality show stage performance under spotlights"><h3 class="card__title">Run4Kulture | Reality Show</h3><p class="citizen-copy">An enterprise-focused talent discovery platform where creatives compete for visibility, structured capital access, mentorship, and venture acceleration.</p></article>
-            <article class="card citizen-card"><p class="card__tag">Media Engine</p><img src="/assets/images/impact-kulturepulse-tv-podcast.png" alt="KulturePulse TV Podcast studio with microphones and broadcast setup"><h3 class="card__title">KulturePulse TV | Podcast</h3><p class="citizen-copy">The discourse engine shaping public conversation around creative sovereignty, youth innovation, sustainability, and culture-led economic transformation.</p></article>
+            <article class="card citizen-card"><p class="card__tag">Culture Envoys</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulture3rybeface-culture-envoys.webp" alt="Kulture3rybeFace culture envoys in traditional dress at a community gathering"><h3 class="card__title">Kulture3rybeFace</h3><p class="citizen-copy">A continental culture diplomacy movement building heritage ambassadors who translate identity into economic opportunity. Culture Envoys mobilize communities, preserve languages, amplify sustainability narratives, and align storytelling with African Union Agenda 2063.</p></article>
+            <article class="card citizen-card"><p class="card__tag">Festival</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulture3rybeface-nigeria-festival.webp" alt="Kulture3rybeFace Nigeria Festival crowd celebrating culture"><h3 class="card__title">Kulture3rybeFace Nigeria Festival</h3><p class="citizen-copy">A 100-day national activation platform uniting 500+ tribes and languages into a structured heritage marketplace that converts cultural diversity into measurable economic participation.</p></article>
+            <article class="card citizen-card"><p class="card__tag">Creators</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-krea84reel-festival.webp" alt="Krea84Reel Festival content creators filming digital stories"><h3 class="card__title">Krea84Reel Festival</h3><p class="citizen-copy">A Culture Content Creators Carnival connecting millions of digital storytellers across identities and integrating them into token systems, funding pools, and policy storytelling.</p></article>
+            <article class="card citizen-card"><p class="card__tag">Reality Platform</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-run4kulture-reality-show.webp" alt="Run4Kulture reality show stage performance under spotlights"><h3 class="card__title">Run4Kulture | Reality Show</h3><p class="citizen-copy">An enterprise-focused talent discovery platform where creatives compete for visibility, structured capital access, mentorship, and venture acceleration.</p></article>
+            <article class="card citizen-card"><p class="card__tag">Media Engine</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulturepulse-tv-podcast.webp" alt="KulturePulse TV Podcast studio with microphones and broadcast setup"><h3 class="card__title">KulturePulse TV | Podcast</h3><p class="citizen-copy">The discourse engine shaping public conversation around creative sovereignty, youth innovation, sustainability, and culture-led economic transformation.</p></article>
           </div>
         </div>
         <div class="outcome gold">Citizen activation converts cultural pride into structured economic participation.</div>
@@ -210,11 +296,11 @@
         <p class="section-tag">Economic Mobilization Platforms</p>
         <h2 class="section-subtitle">Turning Culture into Structured Trade</h2>
         <div class="impact-grid">
-          <article class="card"><p class="card__tag">Commerce Engine</p><img src="/assets/images/impact-shop4kulture.png" alt="Shop4Kulture African marketplace with crafts and products"><h3 class="card__title">Shop4Kulture | Marketplace</h3><p class="card__body">Primary commerce engine for cultural products and IP.</p></article>
-          <article class="card"><p class="card__tag">Merchandise</p><img src="/assets/images/impact-kulturebuddie-merchandise.png" alt="KultureBuddie branded merchandise and apparel display"><h3 class="card__title">KultureBuddie | Merchandise</h3><p class="card__body">Transforms creative IP into branded merchandise.</p></article>
-          <article class="card"><p class="card__tag">Lifestyle</p><img src="/assets/images/impact-kulture4life-lifestyle.png" alt="Kulture4Life Afrocentric lifestyle and fashion scene"><h3 class="card__title">Kulture4Life | Lifestyle</h3><p class="card__body">Afrocentric lifestyle experiences, travel, fashion.</p></article>
-          <article class="card"><p class="card__tag">Cinema Access</p><img src="/assets/images/impact-flixnflex-cinema.png" alt="FlixnFlex cinema environment with screen and audience energy"><h3 class="card__title">FlixnFlex | Cinema Gift Cards</h3><p class="card__body">Democratizes cinema access, ticket revenue feeds creative funds.</p></article>
-          <article class="card"><p class="card__tag">Lottery</p><img src="/assets/images/impact-kulturemonie-lottery.png" alt="KultureMonie Lottery activation with culture-themed ticketing and digital draw participation"><h3 class="card__title">KultureMonie Lottery</h3><p class="card__body">Culture-powered lottery redistributing revenue into creative funds and youth enterprise.</p></article>
+          <article class="card"><p class="card__tag">Commerce Engine</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-shop4kulture.webp" alt="Shop4Kulture African marketplace with crafts and products"><h3 class="card__title">Shop4Kulture | Marketplace</h3><p class="card__body">Primary commerce engine for cultural products and IP.</p></article>
+          <article class="card"><p class="card__tag">Merchandise</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulturebuddie-merchandise.webp" alt="KultureBuddie branded merchandise and apparel display"><h3 class="card__title">KultureBuddie | Merchandise</h3><p class="card__body">Transforms creative IP into branded merchandise.</p></article>
+          <article class="card"><p class="card__tag">Lifestyle</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulture4life-lifestyle.webp" alt="Kulture4Life Afrocentric lifestyle and fashion scene"><h3 class="card__title">Kulture4Life | Lifestyle</h3><p class="card__body">Afrocentric lifestyle experiences, travel, fashion.</p></article>
+          <article class="card"><p class="card__tag">Cinema Access</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-flixnflex-cinema.webp" alt="FlixnFlex cinema environment with screen and audience energy"><h3 class="card__title">FlixnFlex | Cinema Gift Cards</h3><p class="card__body">Democratizes cinema access, ticket revenue feeds creative funds.</p></article>
+          <article class="card"><p class="card__tag">Lottery</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulturemonie-lottery.webp" alt="KultureMonie Lottery activation with culture-themed ticketing and digital draw participation"><h3 class="card__title">KultureMonie Lottery</h3><p class="card__body">Culture-powered lottery redistributing revenue into creative funds and youth enterprise.</p></article>
         </div>
         <div class="outcome red">Every purchase builds productive capital. Every performance fuels economic flow.</div>
       </div>
@@ -225,10 +311,10 @@
         <p class="section-tag">Creative Finance & Investment</p>
         <h2 class="section-subtitle">Building the Capital Backbone</h2>
         <div class="impact-grid">
-          <article class="card"><p class="card__tag">Finance Platform</p><img src="/assets/images/impact-kulturebanker-nextbigkulture.png" alt="KultureBanker NextBigKulture creative project finance strategy session"><h3 class="card__title">KultureBanker | NextBigKulture</h3><p class="card__body">Project finance platform, film/music/entertainment ventures.</p></article>
-          <article class="card"><p class="card__tag">Script Finance</p><img src="/assets/images/impact-cashmykulture-scriptbanker.png" alt="CashMyKulture ScriptBanker script development and funding review session"><h3 class="card__title">CashMyKulture | ScriptBanker</h3><p class="card__body">Early-stage funding for scriptwriters and storytellers.</p></article>
-          <article class="card"><p class="card__tag">Accelerator</p><img src="/assets/images/impact-kulturepreneur.png" alt="Kulturepreneur accelerator mentoring creative founders in a startup workshop"><h3 class="card__title">Kulturepreneur | Creative Economy Business</h3><p class="card__body">Accelerator offering incubation, mentorship, capital.</p></article>
-          <article class="card"><p class="card__tag">Creator Monetization</p><img src="/assets/images/impact-crea80candy-content-creator.png" alt="Crea80candy content creators producing media in a monetization studio"><h3 class="card__title">Crea80candy | Content Creator</h3><p class="card__body">Monetization tools, sponsorship pipelines, token participation.</p></article>
+          <article class="card"><p class="card__tag">Finance Platform</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulturebanker-nextbigkulture.webp" alt="KultureBanker NextBigKulture creative project finance strategy session"><h3 class="card__title">KultureBanker | NextBigKulture</h3><p class="card__body">Project finance platform, film/music/entertainment ventures.</p></article>
+          <article class="card"><p class="card__tag">Script Finance</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-cashmykulture-scriptbanker.webp" alt="CashMyKulture ScriptBanker script development and funding review session"><h3 class="card__title">CashMyKulture | ScriptBanker</h3><p class="card__body">Early-stage funding for scriptwriters and storytellers.</p></article>
+          <article class="card"><p class="card__tag">Accelerator</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulturepreneur.webp" alt="Kulturepreneur accelerator mentoring creative founders in a startup workshop"><h3 class="card__title">Kulturepreneur | Creative Economy Business</h3><p class="card__body">Accelerator offering incubation, mentorship, capital.</p></article>
+          <article class="card"><p class="card__tag">Creator Monetization</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-crea80candy-content-creator.webp" alt="Crea80candy content creators producing media in a monetization studio"><h3 class="card__title">Crea80candy | Content Creator</h3><p class="card__body">Monetization tools, sponsorship pipelines, token participation.</p></article>
         </div>
         <div class="outcome gold">Creativity becomes investable. IP becomes asset-backed opportunity.</div>
       </div>
@@ -238,10 +324,10 @@
       <div class="container">
         <h2 class="section-subtitle">Digital & Telecom Infrastructure</h2>
         <div class="impact-grid">
-          <article class="card"><p class="card__tag">MVNO</p><img src="/assets/images/impact-kulturerhyde-mobile-mvno.png" alt="KultureRhyde Mobile users connected through culture-powered telecom services"><h3 class="card__title">KultureRhyde Mobile | MVNO</h3><p class="card__body">Culture-powered mobile network transforming data usage into creative fund contributions.</p></article>
-          <article class="card"><p class="card__tag">Tech4Kulture</p><img src="/assets/images/impact-kultureroodie-smarttab.png" alt="KultureRoodie SmartTab users accessing streaming and token-enabled services"><h3 class="card__title">KultureRoodie SmartTab</h3><p class="card__body">1TB data, streaming, tokens, financial access.</p></article>
-          <article class="card"><p class="card__tag">Mass Activation</p><img src="/assets/images/impact-kultureroodie-mobile-festival.png" alt="KultureRoodie Mobile Festival with crowds, connectivity, and live performances"><h3 class="card__title">KultureRoodie Mobile Festival</h3><p class="card__body">Mass activation event scaling telecom into culture capital.</p></article>
-          <article class="card"><p class="card__tag">Participation Currency</p><img src="/assets/images/impact-kulturemonie-token-m8.png" alt="KultureMonie Token M8 ecosystem linking commerce, streaming, and social impact"><h3 class="card__title">KultureMonie Token (M8 Ecosystem)</h3><p class="card__body">Links streaming, festivals, green pledges, education, finance.</p></article>
+          <article class="card"><p class="card__tag">MVNO</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulturerhyde-mobile-mvno.webp" alt="KultureRhyde Mobile users connected through culture-powered telecom services"><h3 class="card__title">KultureRhyde Mobile | MVNO</h3><p class="card__body">Culture-powered mobile network transforming data usage into creative fund contributions.</p></article>
+          <article class="card"><p class="card__tag">Tech4Kulture</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kultureroodie-smarttab.webp" alt="KultureRoodie SmartTab users accessing streaming and token-enabled services"><h3 class="card__title">KultureRoodie SmartTab</h3><p class="card__body">1TB data, streaming, tokens, financial access.</p></article>
+          <article class="card"><p class="card__tag">Mass Activation</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kultureroodie-mobile-festival.webp" alt="KultureRoodie Mobile Festival with crowds, connectivity, and live performances"><h3 class="card__title">KultureRoodie Mobile Festival</h3><p class="card__body">Mass activation event scaling telecom into culture capital.</p></article>
+          <article class="card"><p class="card__tag">Participation Currency</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulturemonie-token-m8.webp" alt="KultureMonie Token M8 ecosystem linking commerce, streaming, and social impact"><h3 class="card__title">KultureMonie Token (M8 Ecosystem)</h3><p class="card__body">Links streaming, festivals, green pledges, education, finance.</p></article>
         </div>
         <div class="outcome red">Connectivity becomes economic empowerment. Digital participation becomes capital infrastructure.</div>
       </div>
@@ -251,10 +337,10 @@
       <div class="container">
         <h2 class="section-subtitle">Social & Environmental Integration</h2>
         <div class="impact-grid">
-          <article class="card"><p class="card__tag">Climate</p><img src="/assets/images/impact-kulture2green-eco-pledge.png" alt="Kulture2Green participants planting trees through eco-pledge activities"><h3 class="card__title">Kulture2Green | Eco-Pledge</h3><p class="card__body">Links streaming/tickets/tokens to climate action, tree pledges.</p></article>
-          <article class="card"><p class="card__tag">Health</p><img src="/assets/images/impact-kulture2care-health-wallet.png" alt="Kulture2Care health wallet users accessing care through integrated participation"><h3 class="card__title">Kulture2Care | Universal Health Coverage</h3><p class="card__body">Health wallets integrated into entertainment economy.</p></article>
-          <article class="card"><p class="card__tag">Education</p><img src="/assets/images/impact-aid4kulture-education.png" alt="Aid4Kulture learning program with youth in digital creative training"><h3 class="card__title">Aid4Kulture | SDG 4 Humanity</h3><p class="card__body">Education access, creative skills training aligned with SDGs.</p></article>
-          <article class="card"><p class="card__tag">Kultureducation</p><img src="/assets/images/impact-read3rybereel-kultureducation.png" alt="Read3rybeReel storytelling-based education and language preservation session"><h3 class="card__title">Read3rybeReel | Kultureducation</h3><p class="card__body">Storytelling + curriculum learning, language preservation.</p></article>
+          <article class="card"><p class="card__tag">Climate</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulture2green-eco-pledge.webp" alt="Kulture2Green participants planting trees through eco-pledge activities"><h3 class="card__title">Kulture2Green | Eco-Pledge</h3><p class="card__body">Links streaming/tickets/tokens to climate action, tree pledges.</p></article>
+          <article class="card"><p class="card__tag">Health</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulture2care-health-wallet.webp" alt="Kulture2Care health wallet users accessing care through integrated participation"><h3 class="card__title">Kulture2Care | Universal Health Coverage</h3><p class="card__body">Health wallets integrated into entertainment economy.</p></article>
+          <article class="card"><p class="card__tag">Education</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-aid4kulture-education.webp" alt="Aid4Kulture learning program with youth in digital creative training"><h3 class="card__title">Aid4Kulture | SDG 4 Humanity</h3><p class="card__body">Education access, creative skills training aligned with SDGs.</p></article>
+          <article class="card"><p class="card__tag">Kultureducation</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-read3rybereel-kultureducation.webp" alt="Read3rybeReel storytelling-based education and language preservation session"><h3 class="card__title">Read3rybeReel | Kultureducation</h3><p class="card__body">Storytelling + curriculum learning, language preservation.</p></article>
         </div>
         <div class="outcome gold">Culture funds climate resilience, education access, and health inclusion.</div>
       </div>
@@ -265,11 +351,11 @@
         <p class="section-tag">Festivals & Continental Convergences</p>
         <h2 class="section-subtitle">Festivals are not events — they are marketplace accelerators.</h2>
         <div class="fest-grid">
-          <article class="card"><p class="card__tag">Flagship</p><img src="/assets/images/impact-reelkulture-festival.png" alt="ReelKulture flagship convergence of film music and fashion"><h3 class="card__title">ReelKulture Festival</h3><p class="card__body">Flagship convergence of film, music, fashion, digital innovation, heritage.</p></article>
-          <article class="card"><p class="card__tag">Citizen Carnival</p><img src="/assets/images/impact-kulturerhyde-mobile-festival.png" alt="KultureRhyde Mobile Festival blending mobile tech and outdoor culture"><h3 class="card__title">KultureRhyde Mobile Festival</h3><p class="card__body">10-day Entertainment Citizen Carnival.</p></article>
-          <article class="card"><p class="card__tag">Creators Convergence</p><img src="/assets/images/impact-krea84kulture-festival.png" alt="Krea84Kulture Festival featuring creators, cameras, and live cultural storytelling"><h3 class="card__title">Krea84Kulture Festival</h3><p class="card__body">Multiethnic content creators, unified narrative and economic movement.</p></article>
-          <article class="card"><p class="card__tag">Art-Money Market</p><img src="/assets/images/impact-artbuddie-kulture8ed.png" alt="ArtBuddie Kulture8ed art fair with artpreneurs and gallery works"><h3 class="card__title">ArtBuddie Kulture8ed</h3><p class="card__body">Art-money marketplace festival, artpreneurs + venture capital citizens.</p></article>
-          <article class="card"><p class="card__tag">National Heritage</p><img src="/assets/images/impact-kulture3rybeface-nigeria-festival.png" alt="Kulture3rybeFace Nigeria Festival crowd celebrating culture"><h3 class="card__title">Kulture3rybeFace Nigeria Festival</h3><p class="card__body">National-scale heritage activation.</p></article>
+          <article class="card"><p class="card__tag">Flagship</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-reelkulture-festival.webp" alt="ReelKulture flagship convergence of film music and fashion"><h3 class="card__title">ReelKulture Festival</h3><p class="card__body">Flagship convergence of film, music, fashion, digital innovation, heritage.</p></article>
+          <article class="card"><p class="card__tag">Citizen Carnival</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulturerhyde-mobile-festival.webp" alt="KultureRhyde Mobile Festival blending mobile tech and outdoor culture"><h3 class="card__title">KultureRhyde Mobile Festival</h3><p class="card__body">10-day Entertainment Citizen Carnival.</p></article>
+          <article class="card"><p class="card__tag">Creators Convergence</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-krea84kulture-festival.webp" alt="Krea84Kulture Festival featuring creators, cameras, and live cultural storytelling"><h3 class="card__title">Krea84Kulture Festival</h3><p class="card__body">Multiethnic content creators, unified narrative and economic movement.</p></article>
+          <article class="card"><p class="card__tag">Art-Money Market</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-artbuddie-kulture8ed.webp" alt="ArtBuddie Kulture8ed art fair with artpreneurs and gallery works"><h3 class="card__title">ArtBuddie Kulture8ed</h3><p class="card__body">Art-money marketplace festival, artpreneurs + venture capital citizens.</p></article>
+          <article class="card"><p class="card__tag">National Heritage</p><img decoding="async" loading="lazy" src="/assets/images/optimized/impact-kulture3rybeface-nigeria-festival.webp" alt="Kulture3rybeFace Nigeria Festival crowd celebrating culture"><h3 class="card__title">Kulture3rybeFace Nigeria Festival</h3><p class="card__body">National-scale heritage activation.</p></article>
         </div>
         <div class="outcome red">Festivals become financial engines. Convergence becomes capital circulation.</div>
       </div>
@@ -327,17 +413,17 @@
       <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
       <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href='#' aria-label='Instagram'><img src='/assets/icons/instagram.svg' alt='Instagram' /></a>
-        <a href='#' aria-label='X'><img src='/assets/icons/x.svg' alt='X' /></a>
-        <a href='#' aria-label='YouTube'><img src='/assets/icons/youtube.svg' alt='YouTube' /></a>
-        <a href='#' aria-label='LinkedIn'><img src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+        <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
       </div>
     </div>
     <div>
       <h4>About</h4>
       <a href="/about">About KultureMonie</a>
       <a href="/impact">Impact</a>
-      <a href="/contact">Contact Us</a>
+      <a href="/contact?intent=culture-citizen">Contact Us</a>
     </div>
     <div>
       <h4>Ecosystem</h4>
@@ -354,11 +440,11 @@
   </div>
   <div class="container footer-bottom footer-legal">
     <p>© KultureMonie Africa</p>
-    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact">Contact</a></p>
+    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
   </div>
 </footer>
 
-  <script src="/js/main.js?v=20260601c"></script>
+  <script src="/js/main.js?v=20260608y"></script>
 </body>
 </html>
 

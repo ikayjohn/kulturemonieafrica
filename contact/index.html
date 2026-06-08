@@ -6,8 +6,9 @@
   <title>Contact | KultureMonie Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/contact-hero-bg.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=20260601c">
+  <link rel="stylesheet" href="/css/style.css?v=20260608y">
 </head>
 <body>
   <header class="site-header nav">
@@ -23,7 +24,7 @@
         <a href="/gift-tokens">Gift & Tokens</a>
       </nav>
       <div class="btn-row">
-        <a href="/contact" class="btn btn-gold">Become a Culture Citizen</a>
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
       </div>
     </div>
   </header>
@@ -33,6 +34,7 @@
       <div class="container container--narrow center">
         <h1 class="u-white">Contact Us</h1>
         <p class="u-text-85">Dear Visitor, You can contact the Public Inquiries team with general questions about the KultureMonie Africa Initiative or about the website, by using the form below.</p>
+        <div class="form-status hidden" data-form-status></div>
         <form id="contact-form" class="form-card form-left mt-1" novalidate method="post" action="/contact-submit.php">
           <input type="text" name="company" autocomplete="off" tabindex="-1" aria-hidden="true" class="honeypot-field">
           <label for="full-name">Full Name</label>
@@ -40,7 +42,7 @@
           <p class="error" data-error="full-name"></p>
 
           <label for="subject">Subject</label>
-          <input id="subject" name="subject" type="text" required>
+          <input id="subject" name="subject" type="text" required data-intent-field>
           <p class="error" data-error="subject"></p>
 
           <label for="email">Email</label>
@@ -63,17 +65,17 @@
       <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
       <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href='#' aria-label='Instagram'><img src='/assets/icons/instagram.svg' alt='Instagram' /></a>
-        <a href='#' aria-label='X'><img src='/assets/icons/x.svg' alt='X' /></a>
-        <a href='#' aria-label='YouTube'><img src='/assets/icons/youtube.svg' alt='YouTube' /></a>
-        <a href='#' aria-label='LinkedIn'><img src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+        <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+        <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+        <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
       </div>
     </div>
     <div>
       <h4>About</h4>
       <a href="/about">About KultureMonie</a>
       <a href="/impact">Impact</a>
-      <a href="/contact">Contact Us</a>
+      <a href="/contact?intent=culture-citizen">Contact Us</a>
     </div>
     <div>
       <h4>Ecosystem</h4>
@@ -90,10 +92,10 @@
   </div>
   <div class="container footer-bottom footer-legal">
     <p>© KultureMonie Africa</p>
-    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact">Contact</a></p>
+    <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
   </div>
 </footer>
 
-  <script src="/js/main.js?v=20260601c"></script>
+  <script src="/js/main.js?v=20260608y"></script>
 </body>
 </html>

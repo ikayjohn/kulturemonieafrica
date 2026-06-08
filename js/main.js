@@ -66,6 +66,25 @@ document.querySelectorAll(".current-year").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
+const params = new URLSearchParams(window.location.search);
+document.querySelectorAll("[data-form-status]").forEach((status) => {
+  const isSent = params.get("sent") === "1";
+  const isError = params.get("error") === "1";
+  if (!isSent && !isError) return;
+  status.classList.remove("hidden");
+  status.classList.toggle("form-status--error", isError);
+  status.textContent = isSent
+    ? "Thanks. Your submission has been received."
+    : "Please check the form and try again.";
+});
+
+const intent = params.get("intent");
+const intentField = document.querySelector("[data-intent-field]");
+if (intent && intentField instanceof HTMLInputElement && !intentField.value) {
+  const readableIntent = intent.replace(/[-_:]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  intentField.value = readableIntent;
+}
+
 const revealEls = document.querySelectorAll(".reveal");
 if (revealEls.length) {
   // 2) Scroll Reveal
@@ -78,6 +97,45 @@ if (revealEls.length) {
     });
   }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
   revealEls.forEach((el) => observer.observe(el));
+}
+
+const counterEls = document.querySelectorAll("[data-count-to]");
+if (counterEls.length) {
+  const formatCounter = (el, value) => {
+    const prefix = el.getAttribute("data-count-prefix") || "";
+    const suffix = el.getAttribute("data-count-suffix") || "";
+    el.textContent = `${prefix}${Math.round(value).toLocaleString()}${suffix}`;
+  };
+
+  const runCounter = (el) => {
+    const target = Number(el.getAttribute("data-count-to"));
+    if (!Number.isFinite(target)) return;
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      formatCounter(el, target * eased);
+      if (progress < 1) requestAnimationFrame(tick);
+      else formatCounter(el, target);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      runCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.35 });
+
+  counterEls.forEach((el) => {
+    formatCounter(el, 0);
+    counterObserver.observe(el);
+  });
 }
 
 // 4) Smooth Anchor Scrolling with fixed-nav offset
@@ -141,6 +199,16 @@ if (vendorForm) {
 
   nextBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
+      const requiredFields = [...steps[currentStep].querySelectorAll("[required]")];
+      const valid = requiredFields.every((field) => {
+        if (!(field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement)) return true;
+        if (field.type === "checkbox") return field.checked;
+        return field.value.trim() !== "";
+      });
+      if (!valid) {
+        steps[currentStep].querySelector("[required]")?.focus();
+        return;
+      }
       if (currentStep < steps.length - 1) {
         currentStep += 1;
         renderStep();
@@ -156,24 +224,52 @@ if (vendorForm) {
     });
   });
   vendorForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    vendorForm.classList.add("hidden");
-    success.classList.remove("hidden");
+    if (!vendorForm.checkValidity()) {
+      e.preventDefault();
+      vendorForm.reportValidity();
+      return;
+    }
+    if (success) success.classList.add("hidden");
   });
   renderStep();
 }
 
-// Convert image cards to full-bleed overlay cards (ReelPepper style)
+const giftCardForm = document.querySelector("#gift-card-form");
+if (giftCardForm) {
+  const amountInput = giftCardForm.querySelector("[data-gift-amount-input]");
+  const amountPreview = document.querySelector("[data-gift-preview-amount]");
+  const amountButtons = giftCardForm.querySelectorAll("[data-gift-amount]");
+
+  amountButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const amount = button.getAttribute("data-gift-amount") || "10000";
+      amountButtons.forEach((btn) => btn.classList.toggle("active", btn === button));
+      if (amountInput instanceof HTMLInputElement) amountInput.value = amount;
+      if (amountPreview) amountPreview.textContent = `₦${Number(amount).toLocaleString()}`;
+    });
+  });
+
+  giftCardForm.addEventListener("submit", (e) => {
+    if (!giftCardForm.checkValidity()) {
+      e.preventDefault();
+      giftCardForm.reportValidity();
+    }
+  });
+}
+
+document.querySelectorAll("img").forEach((image) => {
+  if (!(image instanceof HTMLImageElement)) return;
+  if (!image.hasAttribute("loading")) image.loading = "lazy";
+  if (!image.hasAttribute("decoding")) image.decoding = "async";
+});
+
+// Convert image cards to full-bleed overlay cards without repeated inline style work.
 document.querySelectorAll(".card").forEach((card) => {
   if (!(card instanceof HTMLElement)) return;
   const image = card.querySelector("img");
   if (!image) return;
 
   card.classList.add("media-overlay");
-  card.style.setProperty("padding", "0", "important");
-  card.style.setProperty("overflow", "hidden", "important");
-  card.style.setProperty("position", "relative", "important");
-  card.style.setProperty("background", "#000", "important");
 
   let overlay = card.querySelector(".card-overlay");
   if (!overlay) {
@@ -182,9 +278,11 @@ document.querySelectorAll(".card").forEach((card) => {
     card.appendChild(overlay);
   }
   overlay.setAttribute("aria-hidden", "true");
+  overlay.style.setProperty("display", "block", "important");
   overlay.style.setProperty("position", "absolute", "important");
   overlay.style.setProperty("inset", "0", "important");
-  overlay.style.setProperty("background", "linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,.42) 48%, rgba(0,0,0,.05))", "important");
+  overlay.style.setProperty("z-index", "1", "important");
+  overlay.style.setProperty("background", "linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,.44) 52%, rgba(0,0,0,.08))", "important");
 
   let content = card.querySelector(".card-content");
   if (!(content instanceof HTMLElement)) {
@@ -198,11 +296,22 @@ document.querySelectorAll(".card").forEach((card) => {
     card.appendChild(content);
   }
 
+  card.style.setProperty("background", "#000", "important");
+  card.style.setProperty("color", "#fff", "important");
+  card.style.setProperty("padding", "0", "important");
+  card.style.setProperty("overflow", "hidden", "important");
+  card.style.setProperty("position", "relative", "important");
+  card.style.setProperty("min-height", "360px", "important");
+
+  image.style.setProperty("position", "absolute", "important");
+  image.style.setProperty("inset", "0", "important");
   image.style.setProperty("width", "100%", "important");
   image.style.setProperty("height", "100%", "important");
+  image.style.setProperty("min-height", "100%", "important");
   image.style.setProperty("object-fit", "cover", "important");
   image.style.setProperty("display", "block", "important");
-  image.style.setProperty("margin-bottom", "0", "important");
+  image.style.setProperty("margin", "0", "important");
+  image.style.setProperty("border", "0", "important");
   image.style.setProperty("border-radius", "0", "important");
 
   content.style.setProperty("position", "absolute", "important");
@@ -210,10 +319,11 @@ document.querySelectorAll(".card").forEach((card) => {
   content.style.setProperty("right", "0", "important");
   content.style.setProperty("bottom", "0", "important");
   content.style.setProperty("z-index", "2", "important");
-  content.style.setProperty("padding", "1rem", "important");
+  content.style.setProperty("width", "100%", "important");
   content.style.setProperty("max-width", "100%", "important");
-
-  content.querySelectorAll(":is(h1,h2,h3,h4,p,li,small,span,strong,label)").forEach((node) => {
+  content.style.setProperty("padding", "1rem", "important");
+  content.style.setProperty("color", "#fff", "important");
+  content.querySelectorAll("*").forEach((node) => {
     if (!(node instanceof HTMLElement)) return;
     node.style.setProperty("color", "#fff", "important");
   });
