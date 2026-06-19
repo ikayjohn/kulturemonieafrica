@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop4Kulture | KultureMonie Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/marketplace-shop4kulture.webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=20260619a">
+  <style>
+    .shop4k-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(8, 8, 8, 0.74), rgba(8, 8, 8, 0.44)),
+        url("/assets/images/optimized/marketplace-shop4kulture.webp") center/cover no-repeat;
+    }
+    .shop4k-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255, 199, 44, 0.22), transparent 28%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.28));
+      pointer-events: none;
+    }
+    .shop4k-hero .container,
+    .shop4k-shop .container,
+    .shop4k-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+    .shop4k-hero :is(h1, p, span, strong) {
+      color: #fff !important;
+    }
+    .shop4k-title {
+      max-width: 860px;
+      margin: 0 0 .9rem;
+      color: #fff !important;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: .94;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.68);
+    }
+    .shop4k-copy {
+      max-width: 760px;
+      color: rgba(255,255,255,.9) !important;
+      font-size: 1.04rem;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+    }
+    .shop4k-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.3rem;
+    }
+    .shop4k-shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.15rem;
+    }
+    .shop4k-card {
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+    }
+    .shop4k-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+    .shop4k-card-body {
+      padding: 1rem;
+    }
+    .shop4k-card-tag {
+      color: #ff7676;
+      font-family: "Sora", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .shop4k-card h3 {
+      color: #fff !important;
+      font-size: 1.06rem !important;
+      line-height: 1.25 !important;
+      font-weight: 600 !important;
+      margin: .45rem 0 .38rem;
+    }
+    .shop4k-price {
+      color: #d49a00;
+      font-family: "Sora", sans-serif;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: .55rem;
+    }
+    .shop4k-card p {
+      color: rgba(255,255,255,.82) !important;
+      font-size: .84rem;
+      margin: 0;
+    }
+    .shop4k-card .btn {
+      margin-top: .95rem;
+      font-size: .82rem;
+    }
+    .shop4k-cta {
+      background:
+        linear-gradient(135deg, rgba(255, 199, 44, 0.08), rgba(196, 30, 58, 0.1)),
+        #f3eadf;
+    }
+    .shop4k-cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.25rem;
+      border: 1px solid rgba(94, 55, 11, 0.12);
+      background: rgba(255,255,255,.7);
+    }
+    .shop4k-cta-box h2 {
+      color: #241710;
+      margin-bottom: .45rem;
+    }
+    .shop4k-cta-box p {
+      color: rgba(36,23,16,.78);
+      max-width: 640px;
+      margin: 0;
+    }
+    @media (max-width: 980px) {
+      .shop4k-shop-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 900px) {
+      .shop4k-cta-box {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .shop4k-shop-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body data-shop-page="true">
+  <header class="site-header nav">
+    <div class="container nav-wrap">
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="primary-nav" class="nav-links nav__links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/impact">Impact</a>
+        <a href="/resources">Resources</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </nav>
+      <div class="btn-row">
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--dark shop4k-hero">
+      <div class="container">
+        <h1 class="shop4k-title" style="color:#ffffff !important; text-shadow:0 3px 18px rgba(0,0,0,.68) !important;">Shop4Kulture turns African culture into structured trade.</h1>
+        <p class="shop4k-copy" style="color:rgba(255,255,255,.94) !important; text-shadow:0 2px 14px rgba(0,0,0,.6) !important;">Shop4Kulture is KultureMonie’s flagship commerce layer for buying, licensing, merchandising, and collecting culture-backed products across physical and digital formats.</p>
+        <div class="shop4k-actions">
+          <a class="btn btn-primary" href="#shop4k-products">Browse Products</a>
+          <a class="btn btn-outline" href="/marketplace">Return to Marketplace</a>
+          <a class="btn btn-outline" href="/contact?intent=shop4kulture-sell">List a Product</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop4k-products" class="section section--charcoal shop4k-shop">
+      <div class="container">
+        <p class="sec-label">Shop Inventory</p>
+        <h2 class="u-white">Shop4Kulture featured products</h2>
+        <p class="u-text-84">A sample storefront built from Shop4Kulture’s five commerce lanes: product sales, rights licensing, art and fashion commerce, festival merchandise, and digital collectibles.</p>
+        <div class="shop4k-shop-grid">
+          <article class="shop4k-card">
+            <img src="/assets/images/shop4kulture-ankara-heritage-wall-set-v2.png" alt="Ankara Heritage Wall Set product photo in a culture-inspired retail display with textile wall decor" loading="lazy" decoding="async">
+            <div class="shop4k-card-body">
+              <p class="shop4k-card-tag">Cultural Product Sales</p>
+              <h3>Ankara Heritage Wall Set</h3>
+              <div class="shop4k-price">₦48,000</div>
+              <p>Premium framed textile-art wall set designed for collectors, hospitality spaces, and contemporary African interiors.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Ankara Heritage Wall Set" data-cart-price="48000" data-cart-image="/assets/images/shop4kulture-ankara-heritage-wall-set-v2.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="shop4k-card">
+            <img src="/assets/images/shop4kulture-afrobeats-sync-license-pack-v2.png" alt="Afrobeats Sync License Pack product photo showing an audio and content production studio setup" loading="lazy" decoding="async">
+            <div class="shop4k-card-body">
+              <p class="shop4k-card-tag">Film & Music IP Licensing</p>
+              <h3>Afrobeats Sync License Pack</h3>
+              <div class="shop4k-price">₦185,000</div>
+              <p>Starter licensing bundle for brand campaigns, short films, trailers, and digital distribution use across curated tracks.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Afrobeats Sync License Pack" data-cart-price="185000" data-cart-image="/assets/images/shop4kulture-afrobeats-sync-license-pack-v2.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="shop4k-card">
+            <img src="/assets/images/shop4kulture-adire-luxe-capsule-robe-v2.png" alt="Adire Luxe Capsule Robe product photo with patterned robe, jewelry, and accessories" loading="lazy" decoding="async">
+            <div class="shop4k-card-body">
+              <p class="shop4k-card-tag">Art & Fashion Commerce</p>
+              <h3>Adire Luxe Capsule Robe</h3>
+              <div class="shop4k-price">₦72,500</div>
+              <p>Limited-run statement robe merging hand-dyed adire influence with modern Afro-luxury tailoring and styling.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Adire Luxe Capsule Robe" data-cart-price="72500" data-cart-image="/assets/images/shop4kulture-adire-luxe-capsule-robe-v2.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="shop4k-card">
+            <img src="/assets/images/shop4kulture-krea84-festival-merch-bundle-v2.png" alt="Krea84 Festival Merch Bundle product photo with apparel, caps, mugs, bottles, and backpack" loading="lazy" decoding="async">
+            <div class="shop4k-card-body">
+              <p class="shop4k-card-tag">Festival Merchandise Trade</p>
+              <h3>Krea84 Festival Merch Bundle</h3>
+              <div class="shop4k-price">₦29,000</div>
+              <p>Audience-ready bundle with event tee, laminate pass holder, souvenir tote, and collectible festival print set.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Krea84 Festival Merch Bundle" data-cart-price="29000" data-cart-image="/assets/images/shop4kulture-krea84-festival-merch-bundle-v2.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="shop4k-card">
+            <img src="/assets/images/shop4kulture-m8-genesis-collectible-drop-v2.png" alt="M8 Genesis Collectible Drop product image with gold digital token and marketplace screens" loading="lazy" decoding="async">
+            <div class="shop4k-card-body">
+              <p class="shop4k-card-tag">Digital & Tokenized Collectibles</p>
+              <h3>M8 Genesis Collectible Drop</h3>
+              <div class="shop4k-price">₦15,000</div>
+              <p>Digital collectible drop tied to culture participation, community status, and future token-linked access experiences.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="M8 Genesis Collectible Drop" data-cart-price="15000" data-cart-image="/assets/images/shop4kulture-m8-genesis-collectible-drop-v2.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="shop4k-card">
+            <img src="/assets/images/shop4kulture-pan-african-streetwear-gift-set-v2.png" alt="Pan-African Streetwear Gift Set product photo with caps, shirts, bag, drinkware, and accessories" loading="lazy" decoding="async">
+            <div class="shop4k-card-body">
+              <p class="shop4k-card-tag">Art & Fashion Commerce</p>
+              <h3>Pan-African Streetwear Gift Set</h3>
+              <div class="shop4k-price">₦38,500</div>
+              <p>Styled gift set combining cap, tee, tote, and collectible accessory pieces for fashion-first culture buyers.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Pan-African Streetwear Gift Set" data-cart-price="38500" data-cart-image="/assets/images/shop4kulture-pan-african-streetwear-gift-set-v2.png">Add to Cart</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shop4k-cta">
+      <div class="container">
+        <div class="shop4k-cta-box">
+          <div>
+            <p class="sec-label">Next Step</p>
+            <h2>Need bulk orders, licensing support, or a seller partnership?</h2>
+            <p>Shop4Kulture can also support creator catalogs, rights-driven inventory, and curated marketplace onboarding for larger commercial use cases.</p>
+          </div>
+          <a class="btn btn-primary" href="/contact?intent=shop4kulture-partnership">Talk to the Shop4Kulture Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid footer-grid-4">
+      <div>
+        <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+        <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
+        <div class="footer-social" aria-label="Social links">
+          <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+          <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+          <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+          <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        </div>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="/about">About KultureMonie</a>
+        <a href="/impact">Impact</a>
+        <a href="/contact?intent=culture-citizen">Contact Us</a>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/vendor">Vendor Network</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="/resources">Resources</a>
+        <a href="/copyright">Copyright</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom footer-legal">
+      <p>© KultureMonie Africa</p>
+      <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=20260619a"></script>
+</body>
+</html>

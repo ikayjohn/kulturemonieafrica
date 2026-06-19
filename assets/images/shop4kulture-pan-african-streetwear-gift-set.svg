@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Pan-African Streetwear Gift Set</title>
+  <desc id="desc">A curated streetwear gift arrangement featuring a cap, tee, tote, and accessory pieces in Pan-African colors.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d2117"/>
+      <stop offset="100%" stop-color="#3a130f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <ellipse cx="600" cy="780" rx="360" ry="56" fill="#0e100c" opacity=".45"/>
+  <path d="M220 300c40-90 180-110 250-20-20 40-40 70-70 90H250c-25-15-35-40-30-70z" fill="#c42a41"/>
+  <path d="M250 370h150v70H250z" fill="#f1b63b"/>
+  <path d="M460 240h280l40 90-70 55v220H530V385l-70-55z" fill="#111111"/>
+  <path d="M600 240v365" stroke="#2b7a3d" stroke-width="12"/>
+  <rect x="820" y="300" width="180" height="240" rx="18" fill="#e7d8b4"/>
+  <path d="M865 300v-60h90v60" fill="none" stroke="#e7d8b4" stroke-width="18"/>
+  <circle cx="930" cy="640" r="56" fill="#f1b63b"/>
+  <circle cx="930" cy="640" r="26" fill="#2b7a3d"/>
+  <text x="80" y="760" fill="#f7e9c1" font-size="56" font-family="Arial, sans-serif" font-weight="700">PAN-AFRICAN STREETWEAR GIFT SET</text>
+</svg>

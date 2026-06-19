@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KultureBuddie | KultureMonie Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/marketplace-kulturebuddie.webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=20260619a">
+  <style>
+    .kb-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(8, 8, 8, 0.76), rgba(8, 8, 8, 0.46)),
+        url("/assets/images/optimized/marketplace-kulturebuddie.webp") center/cover no-repeat;
+    }
+    .kb-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255, 199, 44, 0.2), transparent 30%),
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.28));
+      pointer-events: none;
+    }
+    .kb-hero .container,
+    .kb-shop .container,
+    .kb-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+    .kb-hero :is(h1, p, span, strong) {
+      color: #fff !important;
+    }
+    .kb-title {
+      max-width: 860px;
+      margin: 0 0 .9rem;
+      color: #fff !important;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: .94;
+      text-shadow: 0 3px 18px rgba(0,0,0,.68);
+    }
+    .kb-copy {
+      max-width: 760px;
+      color: rgba(255,255,255,.94) !important;
+      font-size: 1.04rem;
+      text-shadow: 0 2px 14px rgba(0,0,0,.6);
+    }
+    .kb-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.3rem;
+    }
+    .kb-shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.15rem;
+    }
+    .kb-card {
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+    }
+    .kb-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+    .kb-card-body {
+      padding: 1rem;
+    }
+    .kb-card-tag {
+      color: #ff7676;
+      font-family: "Sora", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .kb-card h3 {
+      color: #fff !important;
+      font-size: 1.06rem !important;
+      line-height: 1.25 !important;
+      font-weight: 600 !important;
+      margin: .45rem 0 .38rem;
+    }
+    .kb-price {
+      color: #d49a00;
+      font-family: "Sora", sans-serif;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: .55rem;
+    }
+    .kb-card p {
+      color: rgba(255,255,255,.82) !important;
+      font-size: .84rem;
+      margin: 0;
+    }
+    .kb-card .btn {
+      margin-top: .95rem;
+      font-size: .82rem;
+    }
+    .kb-cta {
+      background:
+        linear-gradient(135deg, rgba(255, 199, 44, 0.08), rgba(196, 30, 58, 0.1)),
+        #f3eadf;
+    }
+    .kb-cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.25rem;
+      border: 1px solid rgba(94, 55, 11, 0.12);
+      background: rgba(255,255,255,.7);
+    }
+    .kb-cta-box h2 {
+      color: #241710;
+      margin-bottom: .45rem;
+    }
+    .kb-cta-box p {
+      color: rgba(36,23,16,.78);
+      max-width: 640px;
+      margin: 0;
+    }
+    @media (max-width: 980px) {
+      .kb-shop-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 900px) {
+      .kb-cta-box {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .kb-shop-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header nav">
+    <div class="container nav-wrap">
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="primary-nav" class="nav-links nav__links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/impact">Impact</a>
+        <a href="/resources">Resources</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </nav>
+      <div class="btn-row">
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--dark kb-hero">
+      <div class="container">
+        <h1 class="kb-title" style="color:#ffffff !important; text-shadow:0 3px 18px rgba(0,0,0,.68) !important;">KultureBuddie turns branded culture into collectible merchandise.</h1>
+        <p class="kb-copy" style="color:rgba(255,255,255,.94) !important; text-shadow:0 2px 14px rgba(0,0,0,.6) !important;">KultureBuddie is KultureMonie’s merchandise and collectible shop for apparel, branded assets, festival co-brands, and giftable creative products built for culture-first buyers.</p>
+        <div class="kb-actions">
+          <a class="btn btn-primary" href="#kb-products">Browse Products</a>
+          <a class="btn btn-outline" href="/marketplace">Return to Marketplace</a>
+          <a class="btn btn-outline" href="/contact?intent=kulturebuddie-brand-partnership">Co-Brand With Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="kb-products" class="section section--charcoal kb-shop">
+      <div class="container">
+        <p class="sec-label">Shop Inventory</p>
+        <h2 class="u-white">KultureBuddie featured products</h2>
+        <p class="u-text-84">A merchandise-led storefront built around wearables, collectibles, co-branded drops, and premium giftable culture goods.</p>
+        <div class="kb-shop-grid">
+          <article class="kb-card">
+            <img src="/assets/images/kulturebuddie-pan-african-signature-hoodie.png" alt="Pan-African Signature Hoodie product photo with branded hoodie and apparel display" loading="lazy" decoding="async">
+            <div class="kb-card-body">
+              <p class="kb-card-tag">Apparel & Branded Merchandise</p>
+              <h3>Pan-African Signature Hoodie</h3>
+              <div class="kb-price">₦42,000</div>
+              <p>Premium black hoodie with gold continent crest and patterned sleeve accents designed for statement everyday wear.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Pan-African Signature Hoodie" data-cart-price="42000" data-cart-image="/assets/images/kulturebuddie-pan-african-signature-hoodie.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="kb-card">
+            <img src="/assets/images/kulturebuddie-heritage-collector-desk-set.png" alt="Heritage Collector Desk Set product photo with notebooks, caps, drinkware, and accessories" loading="lazy" decoding="async">
+            <div class="kb-card-body">
+              <p class="kb-card-tag">Cultural Collectibles</p>
+              <h3>Heritage Collector Desk Set</h3>
+              <div class="kb-price">₦27,500</div>
+              <p>Curated collectible set with mini display piece, leather journal, engraved mug, and keepsake culture coin.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Heritage Collector Desk Set" data-cart-price="27500" data-cart-image="/assets/images/kulturebuddie-heritage-collector-desk-set.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="kb-card">
+            <img src="/assets/images/kulturebuddie-krea84-festival-co-brand-pack.png" alt="Krea84 Festival Co-Brand Pack product photo with shirts, caps, drinkware, and backpack" loading="lazy" decoding="async">
+            <div class="kb-card-body">
+              <p class="kb-card-tag">Festival Co-Branded Products</p>
+              <h3>Krea84 Festival Co-Brand Pack</h3>
+              <div class="kb-price">₦33,000</div>
+              <p>Event-ready branded merchandise bundle with shirt, tote, lanyard, wristband, and limited collector badge.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Krea84 Festival Co-Brand Pack" data-cart-price="33000" data-cart-image="/assets/images/kulturebuddie-krea84-festival-co-brand-pack.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="kb-card">
+            <img src="/assets/images/kulturebuddie-creative-heritage-gift-box.png" alt="Creative Heritage Gift Box product photo with tote, mug, bottle, cap, and folded apparel" loading="lazy" decoding="async">
+            <div class="kb-card-body">
+              <p class="kb-card-tag">Giftable Creative Assets</p>
+              <h3>Creative Heritage Gift Box</h3>
+              <div class="kb-price">₦24,000</div>
+              <p>Gift-ready box pairing branded tumbler, notebook, art card set, and premium packaging for corporate and personal gifting.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Creative Heritage Gift Box" data-cart-price="24000" data-cart-image="/assets/images/kulturebuddie-creative-heritage-gift-box.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="kb-card">
+            <img src="/assets/images/kulturebuddie-gold-crest-cap-and-tote-set.png" alt="Gold Crest Cap and Tote Set product photo with branded caps, bag, and accessories" loading="lazy" decoding="async">
+            <div class="kb-card-body">
+              <p class="kb-card-tag">Apparel & Branded Merchandise</p>
+              <h3>Gold Crest Cap and Tote Set</h3>
+              <div class="kb-price">₦18,500</div>
+              <p>Matching everyday merch set combining embroidered cap and carry tote for fans, ambassadors, and community drops.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Gold Crest Cap and Tote Set" data-cart-price="18500" data-cart-image="/assets/images/kulturebuddie-gold-crest-cap-and-tote-set.png">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="kb-card">
+            <img src="/assets/images/kulturebuddie-collectors-culture-mug-trio.png" alt="Collectors Culture Mug Trio product photo with mugs, bottle, caps, and branded apparel" loading="lazy" decoding="async">
+            <div class="kb-card-body">
+              <p class="kb-card-tag">Cultural Collectibles</p>
+              <h3>Collectors' Culture Mug Trio</h3>
+              <div class="kb-price">₦15,000</div>
+              <p>Three-piece collectible mug set designed for gift shops, premium bundles, and culture-themed home display.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Collectors' Culture Mug Trio" data-cart-price="15000" data-cart-image="/assets/images/kulturebuddie-collectors-culture-mug-trio.png">Add to Cart</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section kb-cta">
+      <div class="container">
+        <div class="kb-cta-box">
+          <div>
+            <p class="sec-label">Next Step</p>
+            <h2>Need a co-branded drop, bulk order, or merchandise partnership?</h2>
+            <p>KultureBuddie can support event merchandise, creator bundles, gifting programs, and culture-centered branded retail collaborations.</p>
+          </div>
+          <a class="btn btn-primary" href="/contact?intent=kulturebuddie-partnership">Talk to the KultureBuddie Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid footer-grid-4">
+      <div>
+        <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+        <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
+        <div class="footer-social" aria-label="Social links">
+          <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+          <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+          <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+          <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        </div>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="/about">About KultureMonie</a>
+        <a href="/impact">Impact</a>
+        <a href="/contact?intent=culture-citizen">Contact Us</a>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/vendor">Vendor Network</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="/resources">Resources</a>
+        <a href="/copyright">Copyright</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom footer-legal">
+      <p>© KultureMonie Africa</p>
+      <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=20260619a"></script>
+</body>
+</html>

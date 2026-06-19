@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CashMyKulture | ScriptBanker | KultureMonie Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/marketplace-cashmykulture-scriptbanker.webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=20260619a">
+  <style>
+    .cms-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(8, 8, 8, 0.78), rgba(8, 8, 8, 0.46)),
+        url("/assets/images/optimized/marketplace-cashmykulture-scriptbanker.webp") center/cover no-repeat;
+    }
+    .cms-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255, 199, 44, 0.2), transparent 30%),
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.28));
+      pointer-events: none;
+    }
+    .cms-hero .container,
+    .cms-model .container,
+    .cms-offers .container,
+    .cms-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+    .cms-hero :is(h1, p, span, strong) { color: #fff !important; }
+    .cms-title {
+      max-width: 860px;
+      margin: 0 0 .9rem;
+      color: #fff !important;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: .94;
+      text-shadow: 0 3px 18px rgba(0,0,0,.68);
+    }
+    .cms-copy {
+      max-width: 780px;
+      color: rgba(255,255,255,.94) !important;
+      font-size: 1.04rem;
+      text-shadow: 0 2px 14px rgba(0,0,0,.6);
+    }
+    .cms-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.3rem;
+    }
+    .cms-model-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 1.2rem;
+    }
+    .cms-panel {
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.04);
+      padding: 1.1rem;
+    }
+    .cms-panel h2,
+    .cms-panel h3 { color: #fff !important; }
+    .cms-panel p,
+    .cms-panel li { color: rgba(255,255,255,.82) !important; }
+    .cms-list {
+      margin: .75rem 0 0;
+      padding-left: 1rem;
+    }
+    .cms-offer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.15rem;
+    }
+    .cms-card {
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+    }
+    .cms-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+    .cms-card-body { padding: 1rem; }
+    .cms-card-tag {
+      color: #ff7676;
+      font-family: "Sora", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .cms-card h3 {
+      color: #fff !important;
+      font-size: 1.08rem !important;
+      line-height: 1.25 !important;
+      font-weight: 600 !important;
+      margin: .45rem 0 .38rem;
+    }
+    .cms-card p {
+      color: rgba(255,255,255,.82) !important;
+      font-size: .84rem;
+      margin: 0;
+    }
+    .cms-card .btn {
+      margin-top: .95rem;
+      font-size: .82rem;
+    }
+    .cms-cta {
+      background:
+        linear-gradient(135deg, rgba(255, 199, 44, 0.08), rgba(196, 30, 58, 0.1)),
+        #f3eadf;
+    }
+    .cms-cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.25rem;
+      border: 1px solid rgba(94, 55, 11, 0.12);
+      background: rgba(255,255,255,.7);
+    }
+    .cms-cta-box h2 { color: #241710; margin-bottom: .45rem; }
+    .cms-cta-box p { color: rgba(36,23,16,.78); max-width: 640px; margin: 0; }
+    @media (max-width: 980px) {
+      .cms-model-grid,
+      .cms-offer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .cms-cta-box { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header nav">
+    <div class="container nav-wrap">
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="primary-nav" class="nav-links nav__links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/impact">Impact</a>
+        <a href="/resources">Resources</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </nav>
+      <div class="btn-row">
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--dark cms-hero">
+      <div class="container">
+        <h1 class="cms-title" style="color:#ffffff !important; text-shadow:0 3px 18px rgba(0,0,0,.68) !important;">CashMyKulture moves ideas from concept to screen.</h1>
+        <p class="cms-copy" style="color:rgba(255,255,255,.94) !important; text-shadow:0 2px 14px rgba(0,0,0,.6) !important;">CashMyKulture | ScriptBanker is an accelerator for creative startups and entrepreneurs, combining script validation, development grants, community-backed token pledges, and production pipeline access into one venture pathway.</p>
+        <div class="cms-actions">
+          <a class="btn btn-primary" href="#cms-offers">Explore Script Pathways</a>
+          <a class="btn btn-outline" href="/marketplace">Return to Marketplace</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark cms-model">
+      <div class="container cms-model-grid">
+        <div class="cms-panel">
+          <p class="sec-label">Creative Acceleration</p>
+          <h2>Early-stage creative ventures need validation, capital, and production access together.</h2>
+          <p>CashMyKulture is designed for writers, founders, and creative entrepreneurs who need to move promising concepts into finance-ready, production-ready opportunities with stronger market confidence.</p>
+        </div>
+        <div class="cms-panel">
+          <p class="sec-label">What It Provides</p>
+          <h3>One accelerator layer for script and content venture growth.</h3>
+          <ul class="cms-list">
+            <li>Script validation mechanisms to assess development and market potential</li>
+            <li>Development grants that support early-stage creative buildout</li>
+            <li>Community-backed token pledges to unlock audience participation and proof of interest</li>
+            <li>Production pipeline access to move validated ideas toward screen execution</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cms-offers" class="section section--charcoal cms-offers">
+      <div class="container">
+        <p class="sec-label">Accelerator Pathways</p>
+        <h2 class="u-white">How CashMyKulture supports creative ventures</h2>
+        <div class="cms-offer-grid">
+          <article class="cms-card">
+            <img src="/assets/images/optimized/marketplace-cashmykulture-scriptbanker.webp" alt="Creative founder submitting a script for validation" loading="lazy" decoding="async">
+            <div class="cms-card-body">
+              <p class="cms-card-tag">Validation</p>
+              <h3>Validate Your Script</h3>
+              <p>Bring concepts into a structured review process that strengthens development readiness and screen potential.</p>
+              <a class="btn btn-primary" href="/contact?intent=script-submission">Submit Your Script</a>
+            </div>
+          </article>
+
+          <article class="cms-card">
+            <img src="/assets/images/optimized/marketplace-kulturepreneur.webp" alt="Development grant support for early-stage creative venture founders" loading="lazy" decoding="async">
+            <div class="cms-card-body">
+              <p class="cms-card-tag">Development Grants</p>
+              <h3>Apply for Buildout Support</h3>
+              <p>Access grant-style support to strengthen scripts, packaging, business structure, and venture readiness.</p>
+              <a class="btn btn-primary" href="/contact?intent=cashmykulture-development-grant">Apply for Support</a>
+            </div>
+          </article>
+
+          <article class="cms-card">
+            <img src="/assets/images/optimized/marketplace-kulturemonie-token-m8.webp" alt="Community-backed token pledges supporting creative venture ideas" loading="lazy" decoding="async">
+            <div class="cms-card-body">
+              <p class="cms-card-tag">Token Pledges</p>
+              <h3>Activate Community Backing</h3>
+              <p>Use token-backed participation to signal audience conviction, early community support, and venture momentum.</p>
+              <a class="btn btn-primary" href="/contact?intent=cashmykulture-token-pledge">Activate Pledges</a>
+            </div>
+          </article>
+
+          <article class="cms-card">
+            <img src="/assets/images/optimized/marketplace-kulturebanker-nextbigkulture.webp" alt="Production pipeline access for validated creative concepts" loading="lazy" decoding="async">
+            <div class="cms-card-body">
+              <p class="cms-card-tag">Production Access</p>
+              <h3>Enter the Production Pipeline</h3>
+              <p>Move validated concepts toward financing, packaging, and production relationships that can take them to screen.</p>
+              <a class="btn btn-primary" href="/contact?intent=cashmykulture-production-pipeline">Enter the Pipeline</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cms-cta">
+      <div class="container">
+        <div class="cms-cta-box">
+          <div>
+            <p class="sec-label">Founder Access</p>
+            <h2>Need script acceleration, development backing, or production pathway support?</h2>
+            <p>CashMyKulture can support creative entrepreneurs with validation, grant planning, community-backed momentum, and production-readiness strategy.</p>
+          </div>
+          <a class="btn btn-primary" href="/contact?intent=cashmykulture-partnership">Talk to the CashMyKulture Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid footer-grid-4">
+      <div>
+        <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+        <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
+        <div class="footer-social" aria-label="Social links">
+          <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+          <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+          <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+          <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        </div>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="/about">About KultureMonie</a>
+        <a href="/impact">Impact</a>
+        <a href="/contact?intent=culture-citizen">Contact Us</a>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/vendor">Vendor Network</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="/resources">Resources</a>
+        <a href="/copyright">Copyright</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom footer-legal">
+      <p>© KultureMonie Africa</p>
+      <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=20260619a"></script>
+</body>
+</html>

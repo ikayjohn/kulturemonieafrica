@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="/assets/images/optimized/token-activation-hero-v2.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=20260608y">
+  <link rel="stylesheet" href="/css/style.css?v=20260619a">
   <style>
     .token-hero {
       background:
@@ -39,6 +39,8 @@
     .gift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
     .gift-form { background: var(--charcoal); border: 1px solid var(--border); padding: 1rem; }
     .gift-form p { color: rgba(255,255,255,.75); font-size: .9rem; }
+    .gift-subhead { color: var(--gold); margin-bottom: .35rem; }
+    .gift-note { color: rgba(255,255,255,.76); max-width: 720px; }
     .amount-toggle { display: flex; gap: .6rem; margin: .45rem 0 .9rem; }
     .amount-toggle button {
       background: transparent;
@@ -233,19 +235,25 @@
           <div class="benefit-item">❤️ Health wallet contributions</div>
           <div class="benefit-item">Education support channels</div>
         </div>
-        <a class="btn btn-gold big-activate" href="/contact?intent=token-activation">Activate Your Token</a>
+        <div class="btn-row">
+          <a class="btn btn-gold big-activate" href="/contact?intent=token-activation">Activate Your Token</a>
+          <a class="btn btn-outline big-activate" href="/marketplace">Return to Marketplace</a>
+        </div>
       </div>
     </section>
 
     <section class="section section--charcoal">
       <div class="container">
-        <h2 class="u-white">Buy A Kulturemonie Gift Card</h2>
+        <p class="sec-label">FlixnFlex</p>
+        <h2 class="u-white">Buy a FlixnFlex Gift Card</h2>
+        <p class="gift-note">Use the marketplace cart for gift-card purchases. Token activation remains a separate ecosystem action.</p>
         <div class="gift-grid">
-          <form id="gift-card-form" class="gift-form" method="post" action="/gift-card-submit.php" novalidate>
+          <form id="gift-card-form" class="gift-form" novalidate>
             <div class="form-status hidden" data-form-status></div>
+            <p class="gift-subhead">Gift Card Purchase</p>
             <label for="gift-email" class="u-white">Email</label>
             <input id="gift-email" name="gift_email" type="email" placeholder="recipient@email.com" required>
-            <p>SEND A GIFT CARD VIA EMAIL. THE RECIPIENT CAN USE IT FOR PURCHASING ARTWORKS.</p>
+            <p>Send a FlixnFlex gift card by email. Final recipient and delivery details can be confirmed at checkout.</p>
             <label for="gift-expiry" class="u-white">Expiry Date</label>
             <input id="gift-expiry" name="gift_expiry" type="date" required>
             <label class="u-white">Amount</label>
@@ -254,7 +262,7 @@
               <button type="button" data-gift-amount="50000">₦50,000</button>
             </div>
             <input type="hidden" name="gift_amount" value="10000" data-gift-amount-input>
-            <button class="btn btn-primary" type="submit">Buy Now</button>
+            <button class="btn btn-primary" type="button" data-gift-card-add-to-cart>Add to Cart</button>
           </form>
           <div class="gift-card-preview">
             <div class="card-mock" role="img" aria-label="KultureMonie gift card mockup with black and gold styling, card number, expiry, and token access details">
@@ -325,6 +333,6 @@
   </div>
 </footer>
 
-  <script src="/js/main.js?v=20260608y"></script>
+  <script src="/js/main.js?v=20260619a"></script>
 </body>
 </html>

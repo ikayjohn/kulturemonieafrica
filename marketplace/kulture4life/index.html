@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kulture4Life | KultureMonie Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/marketplace-kulture4life.webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=20260619a">
+  <style>
+    .k4l-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(8, 8, 8, 0.74), rgba(8, 8, 8, 0.44)),
+        url("/assets/images/optimized/marketplace-kulture4life.webp") center/cover no-repeat;
+    }
+    .k4l-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255, 199, 44, 0.2), transparent 30%),
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.28));
+      pointer-events: none;
+    }
+    .k4l-hero .container,
+    .k4l-shop .container,
+    .k4l-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+    .k4l-hero :is(h1, p, span, strong) {
+      color: #fff !important;
+    }
+    .k4l-title {
+      max-width: 860px;
+      margin: 0 0 .9rem;
+      color: #fff !important;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: .94;
+      text-shadow: 0 3px 18px rgba(0,0,0,.68);
+    }
+    .k4l-copy {
+      max-width: 780px;
+      color: rgba(255,255,255,.94) !important;
+      font-size: 1.04rem;
+      text-shadow: 0 2px 14px rgba(0,0,0,.6);
+    }
+    .k4l-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.3rem;
+    }
+    .k4l-shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.15rem;
+    }
+    .k4l-card {
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+    }
+    .k4l-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+    .k4l-card-body {
+      padding: 1rem;
+    }
+    .k4l-card-tag {
+      color: #ff7676;
+      font-family: "Sora", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .k4l-card h3 {
+      color: #fff !important;
+      font-size: 1.06rem !important;
+      line-height: 1.25 !important;
+      font-weight: 600 !important;
+      margin: .45rem 0 .38rem;
+    }
+    .k4l-price {
+      color: #d49a00;
+      font-family: "Sora", sans-serif;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: .55rem;
+    }
+    .k4l-card p {
+      color: rgba(255,255,255,.82) !important;
+      font-size: .84rem;
+      margin: 0;
+    }
+    .k4l-card .btn {
+      margin-top: .95rem;
+      font-size: .82rem;
+    }
+    .k4l-cta {
+      background:
+        linear-gradient(135deg, rgba(255, 199, 44, 0.08), rgba(196, 30, 58, 0.1)),
+        #f3eadf;
+    }
+    .k4l-cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.25rem;
+      border: 1px solid rgba(94, 55, 11, 0.12);
+      background: rgba(255,255,255,.7);
+    }
+    .k4l-cta-box h2 {
+      color: #241710;
+      margin-bottom: .45rem;
+    }
+    .k4l-cta-box p {
+      color: rgba(36,23,16,.78);
+      max-width: 640px;
+      margin: 0;
+    }
+    @media (max-width: 980px) {
+      .k4l-shop-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 900px) {
+      .k4l-cta-box {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .k4l-shop-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header nav">
+    <div class="container nav-wrap">
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="primary-nav" class="nav-links nav__links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/impact">Impact</a>
+        <a href="/resources">Resources</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </nav>
+      <div class="btn-row">
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--dark k4l-hero">
+      <div class="container">
+        <h1 class="k4l-title" style="color:#ffffff !important; text-shadow:0 3px 18px rgba(0,0,0,.68) !important;">Kulture4Life brings lifestyle spending into the culture capital cycle.</h1>
+        <p class="k4l-copy" style="color:rgba(255,255,255,.94) !important; text-shadow:0 2px 14px rgba(0,0,0,.6) !important;">Kulture4Life curates Afrocentric lifestyle products and experiences across travel, fashion, cultural access, and entertainment so everyday spending strengthens creative industry growth.</p>
+        <div class="k4l-actions">
+          <a class="btn btn-primary" href="#k4l-products">Browse Lifestyle Offers</a>
+          <a class="btn btn-outline" href="/marketplace">Return to Marketplace</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="k4l-products" class="section section--charcoal k4l-shop">
+      <div class="container">
+        <p class="sec-label">Lifestyle Marketplace</p>
+        <h2 class="u-white">Kulture4Life featured lifestyle offers</h2>
+        <p class="u-text-84">A hybrid catalog of fashion pieces, travel packages, access passes, and experience-led entertainment offers.</p>
+        <div class="k4l-shop-grid">
+          <article class="k4l-card">
+            <img src="/assets/images/optimized/marketplace-kulture4life.webp" alt="Afrocentric fashion and design lifestyle offering" loading="lazy" decoding="async">
+            <div class="k4l-card-body">
+              <p class="k4l-card-tag">Fashion & Design</p>
+              <h3>Afro Luxe Weekend Set</h3>
+              <div class="k4l-price">₦65,000</div>
+              <p>Curated apparel and accessory bundle designed for premium lifestyle buyers seeking bold Afrocentric styling.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Afro Luxe Weekend Set" data-cart-price="65000" data-cart-image="/assets/images/optimized/marketplace-kulture4life.webp">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="k4l-card">
+            <img src="/assets/images/optimized/marketplace-kulture4life.webp" alt="Travel and tourism package for cultural exploration" loading="lazy" decoding="async">
+            <div class="k4l-card-body">
+              <p class="k4l-card-tag">Travel & Tourism</p>
+              <h3>Lagos Heritage Escape</h3>
+              <div class="k4l-price">₦185,000</div>
+              <p>Culture-centered city experience package combining local stays, guided exploration, and curated creative stops.</p>
+              <a class="btn btn-primary" href="/contact?intent=kulture4life-lagos-heritage-escape">Book Now</a>
+            </div>
+          </article>
+
+          <article class="k4l-card">
+            <img src="/assets/images/optimized/impact-krea84reel-festival.webp" alt="Festival access pass and cultural event admission" loading="lazy" decoding="async">
+            <div class="k4l-card-body">
+              <p class="k4l-card-tag">Cultural Access Passes</p>
+              <h3>Krea84 Culture Pass</h3>
+              <div class="k4l-price">₦22,500</div>
+              <p>Access pass for selected screenings, festival sessions, priority entry moments, and culture community touchpoints.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Krea84 Culture Pass" data-cart-price="22500" data-cart-image="/assets/images/optimized/impact-krea84reel-festival.webp">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="k4l-card">
+            <img src="/assets/images/optimized/marketplace-flixnflex.webp" alt="Experience-based entertainment offer with premium access" loading="lazy" decoding="async">
+            <div class="k4l-card-body">
+              <p class="k4l-card-tag">Experience-Based Entertainment</p>
+              <h3>Curated Cinema Night Pack</h3>
+              <div class="k4l-price">₦18,000</div>
+              <p>Premium entertainment bundle for themed screenings, hospitality add-ons, and creator-linked event moments.</p>
+              <a class="btn btn-primary" href="/contact?intent=kulture4life-curated-cinema-night-pack">Reserve Access</a>
+            </div>
+          </article>
+
+          <article class="k4l-card">
+            <img src="/assets/images/optimized/marketplace-kulture4life.webp" alt="Design-led home and lifestyle product offer" loading="lazy" decoding="async">
+            <div class="k4l-card-body">
+              <p class="k4l-card-tag">Fashion & Design</p>
+              <h3>Adire Living Table Set</h3>
+              <div class="k4l-price">₦39,500</div>
+              <p>Afrocentric home lifestyle set combining premium table runner, placemats, and display-ready design pieces.</p>
+              <a class="btn btn-primary" href="#" data-add-to-cart data-cart-name="Adire Living Table Set" data-cart-price="39500" data-cart-image="/assets/images/optimized/marketplace-kulture4life.webp">Add to Cart</a>
+            </div>
+          </article>
+
+          <article class="k4l-card">
+            <img src="/assets/images/optimized/marketplace-kulture4life.webp" alt="Experience-led travel and tourism request package" loading="lazy" decoding="async">
+            <div class="k4l-card-body">
+              <p class="k4l-card-tag">Travel & Tourism</p>
+              <h3>Afro Retreat Experience Package</h3>
+              <div class="k4l-price">₦320,000</div>
+              <p>Small-group cultural retreat package with accommodation, experience curation, and creator-economy touchpoints.</p>
+              <a class="btn btn-primary" href="/contact?intent=kulture4life-afro-retreat-experience-package">Request Package</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section k4l-cta">
+      <div class="container">
+        <div class="k4l-cta-box">
+          <div>
+            <p class="sec-label">Lifestyle Partnerships</p>
+            <h2>Need a custom lifestyle package, event access program, or tourism collaboration?</h2>
+            <p>Kulture4Life can support curated travel, branded lifestyle drops, pass programs, and premium entertainment packages for individuals, groups, and partners.</p>
+          </div>
+          <a class="btn btn-primary" href="/contact?intent=kulture4life-partnership">Talk to the Kulture4Life Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid footer-grid-4">
+      <div>
+        <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+        <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
+        <div class="footer-social" aria-label="Social links">
+          <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+          <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+          <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+          <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        </div>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="/about">About KultureMonie</a>
+        <a href="/impact">Impact</a>
+        <a href="/contact?intent=culture-citizen">Contact Us</a>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/vendor">Vendor Network</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="/resources">Resources</a>
+        <a href="/copyright">Copyright</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom footer-legal">
+      <p>© KultureMonie Africa</p>
+      <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=20260619a"></script>
+</body>
+</html>

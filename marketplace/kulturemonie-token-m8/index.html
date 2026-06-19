@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KultureMonie Token (M8) | KultureMonie Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/marketplace-kulturemonie-token-m8.webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=20260619a">
+  <style>
+    .m8-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(8, 8, 8, 0.78), rgba(8, 8, 8, 0.46)),
+        url("/assets/images/optimized/marketplace-kulturemonie-token-m8.webp") center/cover no-repeat;
+    }
+    .m8-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255, 199, 44, 0.2), transparent 30%),
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.28));
+      pointer-events: none;
+    }
+    .m8-hero .container,
+    .m8-model .container,
+    .m8-offers .container,
+    .m8-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+    .m8-hero :is(h1, p, span, strong) { color: #fff !important; }
+    .m8-title {
+      max-width: 860px;
+      margin: 0 0 .9rem;
+      color: #fff !important;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: .94;
+      text-shadow: 0 3px 18px rgba(0,0,0,.68);
+    }
+    .m8-copy {
+      max-width: 780px;
+      color: rgba(255,255,255,.94) !important;
+      font-size: 1.04rem;
+      text-shadow: 0 2px 14px rgba(0,0,0,.6);
+    }
+    .m8-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.3rem;
+    }
+    .m8-model-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 1.2rem;
+    }
+    .m8-panel {
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.04);
+      padding: 1.1rem;
+    }
+    .m8-panel h2,
+    .m8-panel h3 { color: #fff !important; }
+    .m8-panel p,
+    .m8-panel li { color: rgba(255,255,255,.82) !important; }
+    .m8-list {
+      margin: .75rem 0 0;
+      padding-left: 1rem;
+    }
+    .m8-offer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.15rem;
+    }
+    .m8-card {
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+    }
+    .m8-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+    .m8-card-body { padding: 1rem; }
+    .m8-card-tag {
+      color: #ff7676;
+      font-family: "Sora", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .m8-card h3 {
+      color: #fff !important;
+      font-size: 1.08rem !important;
+      line-height: 1.25 !important;
+      font-weight: 600 !important;
+      margin: .45rem 0 .38rem;
+    }
+    .m8-card p {
+      color: rgba(255,255,255,.82) !important;
+      font-size: .84rem;
+      margin: 0;
+    }
+    .m8-card .btn {
+      margin-top: .95rem;
+      font-size: .82rem;
+    }
+    .m8-cta {
+      background:
+        linear-gradient(135deg, rgba(255, 199, 44, 0.08), rgba(196, 30, 58, 0.1)),
+        #f3eadf;
+    }
+    .m8-cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.25rem;
+      border: 1px solid rgba(94, 55, 11, 0.12);
+      background: rgba(255,255,255,.7);
+    }
+    .m8-cta-box h2 { color: #241710; margin-bottom: .45rem; }
+    .m8-cta-box p { color: rgba(36,23,16,.78); max-width: 640px; margin: 0; }
+    @media (max-width: 980px) {
+      .m8-model-grid,
+      .m8-offer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .m8-cta-box { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header nav">
+    <div class="container nav-wrap">
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="primary-nav" class="nav-links nav__links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/impact">Impact</a>
+        <a href="/resources">Resources</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </nav>
+      <div class="btn-row">
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--dark m8-hero">
+      <div class="container">
+        <h1 class="m8-title" style="color:#ffffff !important; text-shadow:0 3px 18px rgba(0,0,0,.68) !important;">M8 converts consumption into structured value.</h1>
+        <p class="m8-copy" style="color:rgba(255,255,255,.94) !important; text-shadow:0 2px 14px rgba(0,0,0,.6) !important;">The KultureMonie Token (M8) is the foundational participation unit of the ecosystem, designed to track engagement, reward activity, and link everyday usage to stronger economic and social outcomes.</p>
+        <div class="m8-actions">
+          <a class="btn btn-primary" href="#m8-offers">Explore Participation Layers</a>
+          <a class="btn btn-outline" href="/marketplace">Return to Marketplace</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark m8-model">
+      <div class="container m8-model-grid">
+        <div class="m8-panel">
+          <p class="sec-label">Participation Unit</p>
+          <h2>Consumption becomes more valuable when it is measured, rewarded, and reinvested.</h2>
+          <p>M8 is built to connect commerce, streaming, telecom usage, pledges, care contributions, and funding readiness into one participation logic that keeps value circulating across the ecosystem.</p>
+        </div>
+        <div class="m8-panel">
+          <p class="sec-label">What M8 Does</p>
+          <h3>One token layer across multiple ecosystem actions.</h3>
+          <ul class="m8-list">
+            <li>Tracks marketplace engagement across purchases and participation activity</li>
+            <li>Rewards streaming and telecom participation within the ecosystem</li>
+            <li>Enables green pledges tied to measurable contribution flows</li>
+            <li>Supports health wallet contributions through connected participation</li>
+            <li>Facilitates creative funding eligibility by signaling verified activity</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="m8-offers" class="section section--charcoal m8-offers">
+      <div class="container">
+        <p class="sec-label">Participation Layers</p>
+        <h2 class="u-white">How M8 moves across the ecosystem</h2>
+        <div class="m8-offer-grid">
+          <article class="m8-card">
+            <img src="/assets/images/optimized/marketplace-shop4kulture.webp" alt="Marketplace engagement tracked through the M8 token layer" loading="lazy" decoding="async">
+            <div class="m8-card-body">
+              <p class="m8-card-tag">Commerce</p>
+              <h3>Track Marketplace Engagement</h3>
+              <p>Use M8 to convert buying, browsing, and marketplace participation into measurable ecosystem activity.</p>
+              <a class="btn btn-primary" href="/marketplace/shop4kulture">Enter Marketplace</a>
+            </div>
+          </article>
+
+          <article class="m8-card">
+            <img src="/assets/images/optimized/marketplace-stream4kulture.webp" alt="Streaming and telecom participation connected to M8 rewards" loading="lazy" decoding="async">
+            <div class="m8-card-body">
+              <p class="m8-card-tag">Usage Rewards</p>
+              <h3>Reward Streaming and Telecom Activity</h3>
+              <p>Link media access and connected device behavior to participation rewards across streaming and mobile layers.</p>
+              <a class="btn btn-primary" href="/marketplace/kulturerhyde-mobile">Explore Connectivity</a>
+            </div>
+          </article>
+
+          <article class="m8-card">
+            <img src="/assets/images/optimized/marketplace-kulture2green.webp" alt="Green pledges and health wallet contributions supported by M8" loading="lazy" decoding="async">
+            <div class="m8-card-body">
+              <p class="m8-card-tag">Impact</p>
+              <h3>Enable Green and Care Contributions</h3>
+              <p>Use M8 participation logic to connect daily engagement to climate pledges and health wallet support.</p>
+              <a class="btn btn-primary" href="/contact?intent=m8-impact-layer">Enable Impact Layer</a>
+            </div>
+          </article>
+
+          <article class="m8-card">
+            <img src="/assets/images/optimized/marketplace-kulturebanker-nextbigkulture.webp" alt="Creative funding eligibility supported by M8 participation history" loading="lazy" decoding="async">
+            <div class="m8-card-body">
+              <p class="m8-card-tag">Funding Signal</p>
+              <h3>Build Creative Funding Eligibility</h3>
+              <p>Verified participation through M8 creates stronger signals for future venture, project, and creator capital access.</p>
+              <a class="btn btn-primary" href="/contact?intent=m8-funding-eligibility">Build Eligibility</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section m8-cta">
+      <div class="container">
+        <div class="m8-cta-box">
+          <div>
+            <p class="sec-label">Token Activation</p>
+            <h2>Need token activation, participation design, or an ecosystem rewards pathway?</h2>
+            <p>M8 can support marketplace rewards, streaming-linked participation, impact contribution flows, and funding-readiness signaling across the KultureMonie ecosystem.</p>
+          </div>
+          <a class="btn btn-primary" href="/gift-tokens">Activate M8</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid footer-grid-4">
+      <div>
+        <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+        <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
+        <div class="footer-social" aria-label="Social links">
+          <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+          <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+          <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+          <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        </div>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="/about">About KultureMonie</a>
+        <a href="/impact">Impact</a>
+        <a href="/contact?intent=culture-citizen">Contact Us</a>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/vendor">Vendor Network</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="/resources">Resources</a>
+        <a href="/copyright">Copyright</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom footer-legal">
+      <p>© KultureMonie Africa</p>
+      <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=20260619a"></script>
+</body>
+</html>

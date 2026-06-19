@@ -387,3 +387,177 @@ if (heroSliderRoot instanceof HTMLElement) {
   renderHero();
   startHeroAuto();
 }
+
+const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
+const marketplaceCartEnabled =
+  normalizedPath === "/marketplace" ||
+  normalizedPath.startsWith("/marketplace/") ||
+  normalizedPath === "/gift-tokens";
+
+if (marketplaceCartEnabled) {
+  const storageKey = "kulturemonie_shop_cart";
+  const addButtons = [...document.querySelectorAll("[data-add-to-cart]")];
+
+  const formatMoney = (value) => `N${Number(value).toLocaleString()}`;
+  const readCart = () => {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  };
+  const writeCart = (items) => {
+    localStorage.setItem(storageKey, JSON.stringify(items));
+  };
+
+  const fab = document.createElement("button");
+  fab.type = "button";
+  fab.className = "shop-cart-fab";
+  fab.setAttribute("aria-expanded", "false");
+  fab.setAttribute("aria-controls", "shop-cart-panel");
+  fab.setAttribute("aria-label", "Open cart");
+  fab.innerHTML = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"></circle><circle cx="18" cy="20" r="1.6"></circle><path d="M3 4h2.2l1.9 9.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.7L20 7H6.2"></path></svg><span class="shop-cart-fab__count">0</span>';
+
+  const panel = document.createElement("aside");
+  panel.id = "shop-cart-panel";
+  panel.className = "shop-cart-panel";
+  panel.hidden = true;
+  panel.innerHTML = `
+    <div class="shop-cart-head">
+      <div>
+        <h3>Cart</h3>
+        <p>Items added from this shop page.</p>
+      </div>
+      <button type="button" class="shop-cart-close" aria-label="Close cart">×</button>
+    </div>
+    <div class="shop-cart-body" data-shop-cart-body></div>
+    <div class="shop-cart-foot">
+      <div class="shop-cart-total">
+        <strong>Total</strong>
+        <strong data-shop-cart-total>N0</strong>
+      </div>
+      <div class="shop-cart-actions">
+        <a class="btn btn-outline" href="/marketplace">Keep Shopping</a>
+        <a class="btn btn-primary" href="/contact?intent=shop-cart-checkout">Checkout</a>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(fab);
+  document.body.appendChild(panel);
+
+  const countEl = fab.querySelector(".shop-cart-fab__count");
+  const bodyEl = panel.querySelector("[data-shop-cart-body]");
+  const totalEl = panel.querySelector("[data-shop-cart-total]");
+  const closeBtn = panel.querySelector(".shop-cart-close");
+
+  const renderCart = () => {
+    const cart = readCart();
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const totalValue = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    if (countEl) countEl.textContent = String(totalItems);
+    if (totalEl) totalEl.textContent = formatMoney(totalValue);
+    if (!bodyEl) return;
+
+    if (!cart.length) {
+      bodyEl.innerHTML = '<div class="shop-cart-empty">Your cart is empty.</div>';
+      return;
+    }
+
+    bodyEl.innerHTML = cart.map((item, index) => `
+      <div class="shop-cart-row">
+        <img src="${item.image}" alt="${item.name}">
+        <div>
+          <h4>${item.name}</h4>
+          <div class="shop-cart-meta">Qty: ${item.quantity}</div>
+          <div class="shop-cart-price">${formatMoney(item.price)}</div>
+          <button type="button" class="shop-cart-remove" data-remove-cart-item="${index}">Remove</button>
+        </div>
+        <strong>${formatMoney(item.price * item.quantity)}</strong>
+      </div>
+    `).join("");
+  };
+
+  const openCart = () => {
+    panel.hidden = false;
+    fab.setAttribute("aria-expanded", "true");
+  };
+  const closeCart = () => {
+    panel.hidden = true;
+    fab.setAttribute("aria-expanded", "false");
+  };
+
+  fab.addEventListener("click", () => {
+    if (panel.hidden) openCart();
+    else closeCart();
+  });
+
+  if (closeBtn instanceof HTMLElement) {
+    closeBtn.addEventListener("click", closeCart);
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const giftButton = target.closest("[data-gift-card-add-to-cart]");
+    if (giftButton instanceof HTMLElement) {
+      event.preventDefault();
+      const amountInput = document.querySelector("[data-gift-amount-input]");
+      const amount = amountInput instanceof HTMLInputElement ? Number(amountInput.value) : NaN;
+      if (!Number.isFinite(amount)) return;
+
+      const cart = readCart();
+      const name = `FlixnFlex Gift Card - ${formatMoney(amount)}`;
+      const image = "/assets/images/optimized/gift-card-mockup-v2.webp";
+      const existing = cart.find((item) => item.name === name);
+      if (existing) existing.quantity += 1;
+      else cart.push({ name, price: amount, image, quantity: 1 });
+      writeCart(cart);
+      renderCart();
+      openCart();
+      return;
+    }
+
+    const addButton = target.closest("[data-add-to-cart]");
+    if (addButton instanceof HTMLElement) {
+      event.preventDefault();
+      const name = addButton.getAttribute("data-cart-name");
+      const price = Number(addButton.getAttribute("data-cart-price"));
+      const image = addButton.getAttribute("data-cart-image") || "";
+      if (!name || !Number.isFinite(price)) return;
+
+      const cart = readCart();
+      const existing = cart.find((item) => item.name === name);
+      if (existing) existing.quantity += 1;
+      else cart.push({ name, price, image, quantity: 1 });
+      writeCart(cart);
+      renderCart();
+      openCart();
+      return;
+    }
+
+    const removeButton = target.closest("[data-remove-cart-item]");
+    if (removeButton instanceof HTMLElement) {
+      const index = Number(removeButton.getAttribute("data-remove-cart-item"));
+      const cart = readCart();
+      if (Number.isInteger(index) && cart[index]) {
+        cart.splice(index, 1);
+        writeCart(cart);
+        renderCart();
+      }
+      return;
+    }
+
+    if (!panel.hidden && !panel.contains(target) && !fab.contains(target)) {
+      closeCart();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !panel.hidden) closeCart();
+  });
+
+  renderCart();
+}

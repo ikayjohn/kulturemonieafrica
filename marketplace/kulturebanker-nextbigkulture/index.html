@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KultureBanker | NextBigKulture | KultureMonie Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/images/optimized/marketplace-kulturebanker-nextbigkulture.webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=20260619a">
+  <style>
+    .kbn-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(8, 8, 8, 0.78), rgba(8, 8, 8, 0.46)),
+        url("/assets/images/optimized/marketplace-kulturebanker-nextbigkulture.webp") center/cover no-repeat;
+    }
+    .kbn-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255, 199, 44, 0.2), transparent 30%),
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.28));
+      pointer-events: none;
+    }
+    .kbn-hero .container,
+    .kbn-model .container,
+    .kbn-offers .container,
+    .kbn-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+    .kbn-hero :is(h1, p, span, strong) { color: #fff !important; }
+    .kbn-title {
+      max-width: 860px;
+      margin: 0 0 .9rem;
+      color: #fff !important;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: .94;
+      text-shadow: 0 3px 18px rgba(0,0,0,.68);
+    }
+    .kbn-copy {
+      max-width: 780px;
+      color: rgba(255,255,255,.94) !important;
+      font-size: 1.04rem;
+      text-shadow: 0 2px 14px rgba(0,0,0,.6);
+    }
+    .kbn-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.3rem;
+    }
+    .kbn-model-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 1.2rem;
+    }
+    .kbn-panel {
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.04);
+      padding: 1.1rem;
+    }
+    .kbn-panel h2,
+    .kbn-panel h3 { color: #fff !important; }
+    .kbn-panel p,
+    .kbn-panel li { color: rgba(255,255,255,.82) !important; }
+    .kbn-list {
+      margin: .75rem 0 0;
+      padding-left: 1rem;
+    }
+    .kbn-offer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.15rem;
+    }
+    .kbn-card {
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+    }
+    .kbn-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+    .kbn-card-body { padding: 1rem; }
+    .kbn-card-tag {
+      color: #ff7676;
+      font-family: "Sora", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .kbn-card h3 {
+      color: #fff !important;
+      font-size: 1.08rem !important;
+      line-height: 1.25 !important;
+      font-weight: 600 !important;
+      margin: .45rem 0 .38rem;
+    }
+    .kbn-card p {
+      color: rgba(255,255,255,.82) !important;
+      font-size: .84rem;
+      margin: 0;
+    }
+    .kbn-card .btn {
+      margin-top: .95rem;
+      font-size: .82rem;
+    }
+    .kbn-cta {
+      background:
+        linear-gradient(135deg, rgba(255, 199, 44, 0.08), rgba(196, 30, 58, 0.1)),
+        #f3eadf;
+    }
+    .kbn-cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.25rem;
+      border: 1px solid rgba(94, 55, 11, 0.12);
+      background: rgba(255,255,255,.7);
+    }
+    .kbn-cta-box h2 { color: #241710; margin-bottom: .45rem; }
+    .kbn-cta-box p { color: rgba(36,23,16,.78); max-width: 640px; margin: 0; }
+    @media (max-width: 980px) {
+      .kbn-model-grid,
+      .kbn-offer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .kbn-cta-box { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header nav">
+    <div class="container nav-wrap">
+      <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+      <button class="menu-toggle nav__mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="primary-nav" class="nav-links nav__links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/impact">Impact</a>
+        <a href="/resources">Resources</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </nav>
+      <div class="btn-row">
+        <a href="/contact?intent=culture-citizen" class="btn btn-gold">Become a Culture Citizen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--dark kbn-hero">
+      <div class="container">
+        <h1 class="kbn-title" style="color:#ffffff !important; text-shadow:0 3px 18px rgba(0,0,0,.68) !important;">KultureBanker connects investors with high-potential creative ventures.</h1>
+        <p class="kbn-copy" style="color:rgba(255,255,255,.94) !important; text-shadow:0 2px 14px rgba(0,0,0,.6) !important;">A project finance platform designed to structure capital around film production, music distribution, festival infrastructure, and scale-ready African content businesses.</p>
+        <div class="kbn-actions">
+          <a class="btn btn-primary" href="#kbn-offers">Explore Finance Pathways</a>
+          <a class="btn btn-outline" href="/marketplace">Return to Marketplace</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark kbn-model">
+      <div class="container kbn-model-grid">
+        <div class="kbn-panel">
+          <p class="sec-label">Project Finance</p>
+          <h2>Creative ventures need structured capital, not one-off support.</h2>
+          <p>KultureBanker is built to connect investors, founders, producers, and cultural operators around ventures with clear market upside, stronger distribution logic, and scalable creative-economy potential.</p>
+        </div>
+        <div class="kbn-panel">
+          <p class="sec-label">Funding Focus</p>
+          <h3>Capital support across the creative value chain.</h3>
+          <ul class="kbn-list">
+            <li>Film production financing for development, shooting, and post-production</li>
+            <li>Music distribution funding for rollout, catalog growth, and audience expansion</li>
+            <li>Festival infrastructure investment for venues, equipment, and recurring event systems</li>
+            <li>Content scaling support for creative ventures ready to grow distribution and operations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="kbn-offers" class="section section--charcoal kbn-offers">
+      <div class="container">
+        <p class="sec-label">Capital Pathways</p>
+        <h2 class="u-white">How KultureBanker deploys support</h2>
+        <div class="kbn-offer-grid">
+          <article class="kbn-card">
+            <img src="/assets/images/optimized/marketplace-kulturebanker-nextbigkulture.webp" alt="Film producers seeking structured project finance" loading="lazy" decoding="async">
+            <div class="kbn-card-body">
+              <p class="kbn-card-tag">Film Finance</p>
+              <h3>Finance Film Production</h3>
+              <p>Structure capital for film development, production, post, and release strategies with project-ready partners.</p>
+              <a class="btn btn-primary" href="/contact?intent=kulturebanker-film-finance">Finance Film</a>
+            </div>
+          </article>
+
+          <article class="kbn-card">
+            <img src="/assets/images/optimized/marketplace-stream4kulture.webp" alt="Music distribution growth backed by strategic funding" loading="lazy" decoding="async">
+            <div class="kbn-card-body">
+              <p class="kbn-card-tag">Music Growth</p>
+              <h3>Fund Music Distribution</h3>
+              <p>Back artist and catalog growth through marketing, platform rollout, and audience-building distribution capital.</p>
+              <a class="btn btn-primary" href="/contact?intent=kulturebanker-music-distribution">Fund Distribution</a>
+            </div>
+          </article>
+
+          <article class="kbn-card">
+            <img src="/assets/images/optimized/impact-krea84reel-festival.webp" alt="Festival infrastructure investment for African creative events" loading="lazy" decoding="async">
+            <div class="kbn-card-body">
+              <p class="kbn-card-tag">Festival Infrastructure</p>
+              <h3>Invest in Event Infrastructure</h3>
+              <p>Support the physical and operating systems that allow festivals and creative gatherings to scale sustainably.</p>
+              <a class="btn btn-primary" href="/contact?intent=kulturebanker-festival-infrastructure">Invest in Festivals</a>
+            </div>
+          </article>
+
+          <article class="kbn-card">
+            <img src="/assets/images/optimized/marketplace-kulturepreneur.webp" alt="Creative venture scaling with structured capital support" loading="lazy" decoding="async">
+            <div class="kbn-card-body">
+              <p class="kbn-card-tag">Content Scaling</p>
+              <h3>Scale Creative Ventures</h3>
+              <p>Prepare high-potential content businesses for expansion across production, distribution, staffing, and market reach.</p>
+              <a class="btn btn-primary" href="/contact?intent=kulturebanker-content-scaling">Scale a Venture</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section kbn-cta">
+      <div class="container">
+        <div class="kbn-cta-box">
+          <div>
+            <p class="sec-label">Investor Access</p>
+            <h2>Need a finance partner for a venture, slate, or cultural infrastructure build?</h2>
+            <p>KultureBanker can support investor matching, project structuring, venture packaging, and capital-readiness across the African creative economy.</p>
+          </div>
+          <a class="btn btn-primary" href="/contact?intent=kulturebanker-partnership">Talk to the KultureBanker Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid footer-grid-4">
+      <div>
+        <a href="/" class="brand nav__logo"><span class="nav__logo-main">KultureMonie</span><span class="nav__logo-sub">AFRICA</span></a>
+        <p class="footer-tagline">Culture as Capital. Entertainment as Infrastructure.</p>
+        <div class="footer-social" aria-label="Social links">
+          <a href='/contact?intent=social-instagram' aria-label='Instagram'><img decoding="async" loading="lazy" src='/assets/icons/instagram.svg' alt='Instagram' /></a>
+          <a href='/contact?intent=social-x' aria-label='X'><img decoding="async" loading="lazy" src='/assets/icons/x.svg' alt='X' /></a>
+          <a href='/contact?intent=social-youtube' aria-label='YouTube'><img decoding="async" loading="lazy" src='/assets/icons/youtube.svg' alt='YouTube' /></a>
+          <a href='/contact?intent=social-linkedin' aria-label='LinkedIn'><img decoding="async" loading="lazy" src='/assets/icons/linkedin.svg' alt='LinkedIn' /></a>
+        </div>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="/about">About KultureMonie</a>
+        <a href="/impact">Impact</a>
+        <a href="/contact?intent=culture-citizen">Contact Us</a>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/vendor">Vendor Network</a>
+        <a href="/gift-tokens">Gift & Tokens</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="/resources">Resources</a>
+        <a href="/copyright">Copyright</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom footer-legal">
+      <p>© KultureMonie Africa</p>
+      <p><a href="/copyright">Copyright</a> | <a href="/privacy">Privacy</a> | <a href="/contact?intent=culture-citizen">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=20260619a"></script>
+</body>
+</html>
